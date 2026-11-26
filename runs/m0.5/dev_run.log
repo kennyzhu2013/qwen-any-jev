@@ -1,0 +1,30 @@
+loading Qwen/Qwen3.5-4B ...
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  69%|██████▉   | 293/426 [00:00<00:00, 2851.66it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 2914.28it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+
+=== split cal: 580 rows ===
+[run] cal/raw
+      acc=0.8690 bal=0.5363 fraud_recall=0.9632 normal_recall=0.1094 ece=0.0654 s/row=0.1132
+[run] cal/l0-noprior
+      acc=0.8672 bal=0.5353 fraud_recall=0.9612 normal_recall=0.1094 ece=0.0585 s/row=0.2220
+[run] cal/l0-batch
+      acc=0.7793 bal=0.5954 fraud_recall=0.8314 normal_recall=0.3594 ece=0.0577 s/row=0.2236
+[run] cal/l0-cf
+      acc=0.8707 bal=0.5304 fraud_recall=0.9671 normal_recall=0.0938 ece=0.0647 s/row=0.2240
+[run] cal/l0-adaptive
+      acc=0.8672 bal=0.5353 fraud_recall=0.9612 normal_recall=0.1094 ece=0.0585 s/row=0.2233
+
+=== split dev: 289 rows ===
+[run] dev/raw
+      acc=0.8651 bal=0.5411 fraud_recall=0.9572 normal_recall=0.1250 ece=0.0866 s/row=0.1255
+[run] dev/l0-noprior
+      acc=0.8651 bal=0.5411 fraud_recall=0.9572 normal_recall=0.1250 ece=0.0747 s/row=0.2452
+[run] dev/l0-batch
+      acc=0.7785 bal=0.5745 fraud_recall=0.8366 normal_recall=0.3125 ece=0.0613 s/row=0.2453
+[run] dev/l0-cf
+      acc=0.8720 bal=0.5450 fraud_recall=0.9650 normal_recall=0.1250 ece=0.0593 s/row=0.2462
+[run] dev/l0-adaptive
+      acc=0.8651 bal=0.5411 fraud_recall=0.9572 normal_recall=0.1250 ece=0.0747 s/row=0.2454
+
+wrote runs/m0.5/dev/results.json

@@ -1,0 +1,8 @@
+.venv310/
+.venv312/
+__pycache__/
+*.pyc
+
+# generated large feature cache (exceeds gitcode 100MiB limit)
+runs/v2/features_binary.npz
+runs/external_cq/features_normal_1030.npz

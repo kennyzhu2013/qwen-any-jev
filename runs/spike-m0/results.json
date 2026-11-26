@@ -1,0 +1,1197 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": null,
+    "goldens": "scripts/spike_samples.jsonl",
+    "n_rows": 12,
+    "synthetic": true,
+    "anyjev_version": "0.3.0",
+    "transformers_version": "5.22.1",
+    "torch_version": "2.6.0+cu124",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "batch_size": 8,
+    "question": "请判断该笔交易应如何处理：",
+    "options": [
+      "通过",
+      "人工复核",
+      "拒绝"
+    ],
+    "prior": "batch",
+    "max_perms": null,
+    "canonical_order": true,
+    "notes": [
+      "Samples are synthetic smoke-test rows, not the Phase 0 goldens; metrics are not a quality claim.",
+      "AnyJev 0.3.0 implements raw and L0 only; L1 here is post-hoc temperature scaling fit in-sample.",
+      "L0 uses a batch prior estimated from the same rows; no labels are used in the prior.",
+      "A 12-row run cannot support a promotion decision; it validates the API and pipeline."
+    ]
+  },
+  "results": {
+    "raw": {
+      "config": "raw",
+      "elapsed_s": 1.977494589984417,
+      "per_row_s": 0.16479121583203474,
+      "decider_stats": {
+        "backend_calls": 1,
+        "flat_prompts": 12,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 0,
+        "adaptive_shifts_total": 0
+      },
+      "rows": [
+        {
+          "id": "s001",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9996111299918716,
+          "probs": [
+            0.9996111299918716,
+            0.0002304702655415666,
+            0.00015839974258682714
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9999080560400672
+          }
+        },
+        {
+          "id": "s002",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.9147506372168465,
+          "probs": [
+            0.018985044926577394,
+            0.06626431785657608,
+            0.9147506372168465
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996090901012329
+          }
+        },
+        {
+          "id": "s003",
+          "label": "拒绝",
+          "answer": "拒绝",
+          "confidence": 0.55018362653808,
+          "probs": [
+            0.021332934280998035,
+            0.428483439180922,
+            0.55018362653808
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996891552666165
+          }
+        },
+        {
+          "id": "s004",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.49558135459532704,
+          "probs": [
+            0.06706963499561876,
+            0.49558135459532704,
+            0.4373490104090541
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995593875883495
+          }
+        },
+        {
+          "id": "s005",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.43490382450154846,
+          "probs": [
+            0.38380127804481096,
+            0.43490382450154846,
+            0.1812948974536407
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995503536251565
+          }
+        },
+        {
+          "id": "s006",
+          "label": "拒绝",
+          "answer": "拒绝",
+          "confidence": 0.630895522732629,
+          "probs": [
+            0.03141043852326866,
+            0.33769403874410214,
+            0.630895522732629
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997128314565971
+          }
+        },
+        {
+          "id": "s007",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9997544434990874,
+          "probs": [
+            0.9997544434990874,
+            0.00017951618653043152,
+            6.604031438204355e-05
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999875160602841
+          }
+        },
+        {
+          "id": "s008",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.4443701130394402,
+          "probs": [
+            0.1634746386020874,
+            0.4443701130394402,
+            0.3921552483584725
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999369137859283
+          }
+        },
+        {
+          "id": "s009",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.7638782002405438,
+          "probs": [
+            0.10337967258782794,
+            0.7638782002405438,
+            0.13274212717162812
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996760155008207
+          }
+        },
+        {
+          "id": "s010",
+          "label": "拒绝",
+          "answer": "拒绝",
+          "confidence": 0.7021014677880725,
+          "probs": [
+            0.039609851991607506,
+            0.25828868022032003,
+            0.7021014677880725
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995949016907484
+          }
+        },
+        {
+          "id": "s011",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.8322805214372929,
+          "probs": [
+            0.8322805214372929,
+            0.09940173310582907,
+            0.06831774545687797
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994387678269157
+          }
+        },
+        {
+          "id": "s012",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.8564435924324018,
+          "probs": [
+            0.012216513188641176,
+            0.13133989437895696,
+            0.8564435924324018
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997343081978778
+          }
+        }
+      ],
+      "metrics": {
+        "n": 12,
+        "accuracy": 0.75,
+        "macro_tpr": 0.7833333333333333,
+        "ece_10bin": 0.2984105179284882,
+        "brier": 0.4718334398399009,
+        "nll": 0.7566820617903276,
+        "mean_confidence": 0.7187295361677618,
+        "answers": {
+          "通过": 3,
+          "人工复核": 4,
+          "拒绝": 5
+        },
+        "per_class": {
+          "通过": {
+            "support": 3,
+            "predicted": 3,
+            "tpr": 1.0,
+            "tnr": 1.0
+          },
+          "人工复核": {
+            "support": 5,
+            "predicted": 4,
+            "tpr": 0.6,
+            "tnr": 0.8571428571428571
+          },
+          "拒绝": {
+            "support": 4,
+            "predicted": 5,
+            "tpr": 0.75,
+            "tnr": 0.75
+          }
+        }
+      }
+    },
+    "L0": {
+      "config": "L0",
+      "elapsed_s": 0.7417513467371464,
+      "per_row_s": 0.06181261222809553,
+      "decider_stats": {
+        "backend_calls": 1,
+        "flat_prompts": 36,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 0,
+        "adaptive_shifts_total": 0
+      },
+      "rows": [
+        {
+          "id": "s001",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.999590411996631,
+          "probs": [
+            0.999590411996631,
+            0.00032174229632661046,
+            8.784570704241085e-05
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9999088204887281
+          }
+        },
+        {
+          "id": "s002",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.9167622222090707,
+          "probs": [
+            0.0042717949123426465,
+            0.07896598287858672,
+            0.9167622222090707
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996062571062837
+          }
+        },
+        {
+          "id": "s003",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.5575210464688584,
+          "probs": [
+            0.011095251386568134,
+            0.5575210464688584,
+            0.4313837021445735
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996229984799062
+          }
+        },
+        {
+          "id": "s004",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.5176937243777493,
+          "probs": [
+            0.009092052785481135,
+            0.5176937243777493,
+            0.47321422283676945
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995804154187296
+          }
+        },
+        {
+          "id": "s005",
+          "label": "人工复核",
+          "answer": "通过",
+          "confidence": 0.4862070807614536,
+          "probs": [
+            0.4862070807614536,
+            0.3633201501183879,
+            0.15047276912015833
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995033879785021
+          }
+        },
+        {
+          "id": "s006",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.5139925069673257,
+          "probs": [
+            0.01617648898764778,
+            0.5139925069673257,
+            0.4698310040450265
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996658076429897
+          }
+        },
+        {
+          "id": "s007",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9997550149465729,
+          "probs": [
+            0.9997550149465729,
+            0.0002034828643948086,
+            4.150218903214098e-05
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.999894336360356
+          }
+        },
+        {
+          "id": "s008",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.44723456069229883,
+          "probs": [
+            0.10842949337418933,
+            0.44723456069229883,
+            0.44433594593351183
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993622708554136
+          }
+        },
+        {
+          "id": "s009",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.8196664033598612,
+          "probs": [
+            0.0701227754598669,
+            0.8196664033598612,
+            0.11021082118027184
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995906149861189
+          }
+        },
+        {
+          "id": "s010",
+          "label": "拒绝",
+          "answer": "拒绝",
+          "confidence": 0.6129815610897981,
+          "probs": [
+            0.01280096633083029,
+            0.37421747257937166,
+            0.6129815610897981
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996222088685865
+          }
+        },
+        {
+          "id": "s011",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.8515908184758239,
+          "probs": [
+            0.8515908184758239,
+            0.07290004609349232,
+            0.07550913543068385
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993289512171143
+          }
+        },
+        {
+          "id": "s012",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.7887611924075277,
+          "probs": [
+            0.001967275546883515,
+            0.20927153204558868,
+            0.7887611924075277
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996908376136799
+          }
+        }
+      ],
+      "metrics": {
+        "n": 12,
+        "accuracy": 0.5,
+        "macro_tpr": 0.5499999999999999,
+        "ece_10bin": 0.3286065814918337,
+        "brier": 0.5108470755775869,
+        "nll": 0.752549927971172,
+        "mean_confidence": 0.7093130453127475,
+        "answers": {
+          "通过": 4,
+          "人工复核": 5,
+          "拒绝": 3
+        },
+        "per_class": {
+          "通过": {
+            "support": 3,
+            "predicted": 4,
+            "tpr": 1.0,
+            "tnr": 0.8888888888888888
+          },
+          "人工复核": {
+            "support": 5,
+            "predicted": 5,
+            "tpr": 0.4,
+            "tnr": 0.5714285714285714
+          },
+          "拒绝": {
+            "support": 4,
+            "predicted": 3,
+            "tpr": 0.25,
+            "tnr": 0.75
+          }
+        }
+      }
+    },
+    "L0-adaptive": {
+      "config": "L0-adaptive",
+      "elapsed_s": 0.739188726991415,
+      "per_row_s": 0.061599060582617916,
+      "decider_stats": {
+        "backend_calls": 2,
+        "flat_prompts": 36,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 12,
+        "adaptive_shifts_total": 36
+      },
+      "rows": [
+        {
+          "id": "s001",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9996041648320212,
+          "probs": [
+            0.9996041648320212,
+            0.0003086707083229088,
+            8.716445965604025e-05
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9999083182750043
+          }
+        },
+        {
+          "id": "s002",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.9192979586085195,
+          "probs": [
+            0.004140963573815889,
+            0.07656107781766455,
+            0.9192979586085195
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9996244247273512
+          }
+        },
+        {
+          "id": "s003",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.5488799312924969,
+          "probs": [
+            0.011870455600350428,
+            0.5488799312924969,
+            0.4392496131071528
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9996233680792384
+          }
+        },
+        {
+          "id": "s004",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.5196481561022684,
+          "probs": [
+            0.009124758415120615,
+            0.5196481561022684,
+            0.4712270854826109
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9995788822132939
+          }
+        },
+        {
+          "id": "s005",
+          "label": "人工复核",
+          "answer": "通过",
+          "confidence": 0.48674471335565445,
+          "probs": [
+            0.48674471335565445,
+            0.3637863869351903,
+            0.14946889970915517
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9995033879785021
+          }
+        },
+        {
+          "id": "s006",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.505151767222537,
+          "probs": [
+            0.017276811095678923,
+            0.505151767222537,
+            0.4775714216817843
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9996767994154557
+          }
+        },
+        {
+          "id": "s007",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9997448925818464,
+          "probs": [
+            0.9997448925818464,
+            0.00021217598764044574,
+            4.293143051325217e-05
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9998969127513405
+          }
+        },
+        {
+          "id": "s008",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.4527661185780841,
+          "probs": [
+            0.1009759154341095,
+            0.4527661185780841,
+            0.4462579659878065
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9993708433131313
+          }
+        },
+        {
+          "id": "s009",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.8227510948054104,
+          "probs": [
+            0.06750218305710916,
+            0.8227510948054104,
+            0.10974672213748042
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9995954779534423
+          }
+        },
+        {
+          "id": "s010",
+          "label": "拒绝",
+          "answer": "拒绝",
+          "confidence": 0.6110890147284488,
+          "probs": [
+            0.012861358997852712,
+            0.37604962627369853,
+            0.6110890147284488
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9996209377002415
+          }
+        },
+        {
+          "id": "s011",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.8520796354802906,
+          "probs": [
+            0.8520796354802906,
+            0.07295482418321893,
+            0.0749655403364905
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9993468455446983
+          }
+        },
+        {
+          "id": "s012",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.7874294319015779,
+          "probs": [
+            0.0019793306145991494,
+            0.21059123748382297,
+            0.7874294319015779
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "shifts_used": 3,
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "adaptive": true,
+            "stop_threshold": 8.5,
+            "stop_stat": "logit",
+            "stop_calibrated": false,
+            "answer_mass": 0.9996908376136799
+          }
+        }
+      ],
+      "metrics": {
+        "n": 12,
+        "accuracy": 0.5,
+        "macro_tpr": 0.5499999999999999,
+        "ece_10bin": 0.327778949121738,
+        "brier": 0.5081450358081272,
+        "nll": 0.750851843528679,
+        "mean_confidence": 0.708765573290763,
+        "answers": {
+          "通过": 4,
+          "人工复核": 5,
+          "拒绝": 3
+        },
+        "per_class": {
+          "通过": {
+            "support": 3,
+            "predicted": 4,
+            "tpr": 1.0,
+            "tnr": 0.8888888888888888
+          },
+          "人工复核": {
+            "support": 5,
+            "predicted": 5,
+            "tpr": 0.4,
+            "tnr": 0.5714285714285714
+          },
+          "拒绝": {
+            "support": 4,
+            "predicted": 3,
+            "tpr": 0.25,
+            "tnr": 0.75
+          }
+        }
+      }
+    },
+    "L1": {
+      "config": "L1",
+      "base": "L0",
+      "temperature": 1.6,
+      "fit_nll_in_sample": 0.7132591639585756,
+      "in_sample": true,
+      "elapsed_s": 0.0,
+      "per_row_s": 0.0,
+      "decider_stats": {},
+      "rows": [
+        {
+          "id": "s001",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9906060384989503,
+          "probs": [
+            0.9906060384989503,
+            0.0065043629617626345,
+            0.0028895985392870084
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9999088204887281
+          }
+        },
+        {
+          "id": "s002",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.7994183836383713,
+          "probs": [
+            0.02789299729009834,
+            0.17268861907153038,
+            0.7994183836383713
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996062571062837
+          }
+        },
+        {
+          "id": "s003",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.5159072876379234,
+          "probs": [
+            0.04460351528596617,
+            0.5159072876379234,
+            0.43948919707611045
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996229984799062
+          }
+        },
+        {
+          "id": "s004",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.493739614951207,
+          "probs": [
+            0.0394789986872945,
+            0.493739614951207,
+            0.4667813863614985
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995804154187296
+          }
+        },
+        {
+          "id": "s005",
+          "label": "人工复核",
+          "answer": "通过",
+          "confidence": 0.4321572078054994,
+          "probs": [
+            0.4321572078054994,
+            0.36021300583804666,
+            0.20762978635645393
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995033879785021
+          }
+        },
+        {
+          "id": "s006",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.4853110449135417,
+          "probs": [
+            0.055875940908594164,
+            0.4853110449135417,
+            0.4588130141778641
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996658076429897
+          }
+        },
+        {
+          "id": "s007",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.9932893631586118,
+          "probs": [
+            0.9932893631586118,
+            0.0048974745942038465,
+            0.0018131622471842619
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.999894336360356
+          }
+        },
+        {
+          "id": "s008",
+          "label": "拒绝",
+          "answer": "人工复核",
+          "confidence": 0.41521255990013894,
+          "probs": [
+            0.17125885139456254,
+            0.41521255990013894,
+            0.41352858870529846
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.5,
+            "order_flip_l0": 0.5,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993622708554136
+          }
+        },
+        {
+          "id": "s009",
+          "label": "人工复核",
+          "answer": "人工复核",
+          "confidence": 0.6664702889369609,
+          "probs": [
+            0.14335720335913651,
+            0.6664702889369609,
+            0.19017250770390268
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995906149861189
+          }
+        },
+        {
+          "id": "s010",
+          "label": "拒绝",
+          "answer": "拒绝",
+          "confidence": 0.5483376817686181,
+          "probs": [
+            0.04885625591897822,
+            0.40280606231240373,
+            0.5483376817686181
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996222088685865
+          }
+        },
+        {
+          "id": "s011",
+          "label": "通过",
+          "answer": "通过",
+          "confidence": 0.6967912013148408,
+          "probs": [
+            0.6967912013148408,
+            0.14993850570630576,
+            0.15327029297885347
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993289512171143
+          }
+        },
+        {
+          "id": "s012",
+          "label": "人工复核",
+          "answer": "拒绝",
+          "confidence": 0.6849423725225712,
+          "probs": [
+            0.01617070001560154,
+            0.2988869274618272,
+            0.6849423725225712
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 3,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996908376136799
+          }
+        }
+      ],
+      "metrics": {
+        "n": 12,
+        "accuracy": 0.5,
+        "macro_tpr": 0.5499999999999999,
+        "ece_10bin": 0.14619935347767588,
+        "brier": 0.47787093203011427,
+        "nll": 0.7132591639585756,
+        "mean_confidence": 0.6435152537539363,
+        "answers": {
+          "通过": 4,
+          "人工复核": 5,
+          "拒绝": 3
+        },
+        "per_class": {
+          "通过": {
+            "support": 3,
+            "predicted": 4,
+            "tpr": 1.0,
+            "tnr": 0.8888888888888888
+          },
+          "人工复核": {
+            "support": 5,
+            "predicted": 5,
+            "tpr": 0.4,
+            "tnr": 0.5714285714285714
+          },
+          "拒绝": {
+            "support": 4,
+            "predicted": 3,
+            "tpr": 0.25,
+            "tnr": 0.75
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "dev_n": 289,
+  "gate_n": 578,
+  "policies": {
+    "zero_escape": {
+      "lo": 0.03858223184943199,
+      "hi": 0.7324557304382324,
+      "dev": {
+        "n": 289,
+        "support": {
+          "正常": 32,
+          "涉诈": 257
+        },
+        "lo": 0.03858223184943199,
+        "hi": 0.7324557304382324,
+        "auto_normal": 1,
+        "auto_fraud": 168,
+        "review": 120,
+        "review_rate": 0.41522491349480967,
+        "auto_coverage": 0.5847750865051904,
+        "fraud_escape": 0.0038910505836575876,
+        "fraud_auto_catch": 0.642023346303502,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.09375,
+        "auto_accuracy": 0.9763313609467456,
+        "review_fraud_share": 0.7583333333333333
+      },
+      "gate": {
+        "n": 578,
+        "support": {
+          "正常": 64,
+          "涉诈": 514
+        },
+        "lo": 0.03858223184943199,
+        "hi": 0.7324557304382324,
+        "auto_normal": 0,
+        "auto_fraud": 357,
+        "review": 221,
+        "review_rate": 0.38235294117647056,
+        "auto_coverage": 0.6176470588235294,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.6750972762645915,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.15625,
+        "auto_accuracy": 0.9719887955182073,
+        "review_fraud_share": 0.755656108597285
+      }
+    },
+    "balanced": {
+      "lo": 0.09590163081884384,
+      "hi": 0.7324557304382324,
+      "dev": {
+        "n": 289,
+        "support": {
+          "正常": 32,
+          "涉诈": 257
+        },
+        "lo": 0.09590163081884384,
+        "hi": 0.7324557304382324,
+        "auto_normal": 8,
+        "auto_fraud": 168,
+        "review": 113,
+        "review_rate": 0.39100346020761245,
+        "auto_coverage": 0.6089965397923875,
+        "fraud_escape": 0.019455252918287938,
+        "fraud_auto_catch": 0.642023346303502,
+        "normal_auto_pass": 0.09375,
+        "normal_false_reject": 0.09375,
+        "auto_accuracy": 0.9545454545454546,
+        "review_fraud_share": 0.7699115044247787
+      },
+      "gate": {
+        "n": 578,
+        "support": {
+          "正常": 64,
+          "涉诈": 514
+        },
+        "lo": 0.09590163081884384,
+        "hi": 0.7324557304382324,
+        "auto_normal": 5,
+        "auto_fraud": 357,
+        "review": 216,
+        "review_rate": 0.3737024221453287,
+        "auto_coverage": 0.6262975778546713,
+        "fraud_escape": 0.0019455252918287938,
+        "fraud_auto_catch": 0.6750972762645915,
+        "normal_auto_pass": 0.0625,
+        "normal_false_reject": 0.15625,
+        "auto_accuracy": 0.9696132596685083,
+        "review_fraud_share": 0.7685185185185185
+      }
+    },
+    "budget20": {
+      "lo": -1.0,
+      "hi": 0.4468294680118561,
+      "dev": {
+        "n": 289,
+        "support": {
+          "正常": 32,
+          "涉诈": 257
+        },
+        "lo": -1.0,
+        "hi": 0.4468294680118561,
+        "auto_normal": 0,
+        "auto_fraud": 248,
+        "review": 41,
+        "review_rate": 0.14186851211072665,
+        "auto_coverage": 0.8581314878892734,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.9105058365758755,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.4375,
+        "auto_accuracy": 0.9435483870967742,
+        "review_fraud_share": 0.5609756097560976
+      },
+      "gate": {
+        "n": 578,
+        "support": {
+          "正常": 64,
+          "涉诈": 514
+        },
+        "lo": -1.0,
+        "hi": 0.4468294680118561,
+        "auto_normal": 0,
+        "auto_fraud": 491,
+        "review": 87,
+        "review_rate": 0.15051903114186851,
+        "auto_coverage": 0.8494809688581315,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.9046692607003891,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.40625,
+        "auto_accuracy": 0.9470468431771895,
+        "review_fraud_share": 0.5632183908045977
+      }
+    },
+    "budget30": {
+      "lo": -1.0,
+      "hi": 0.5851415991783142,
+      "dev": {
+        "n": 289,
+        "support": {
+          "正常": 32,
+          "涉诈": 257
+        },
+        "lo": -1.0,
+        "hi": 0.5851415991783142,
+        "auto_normal": 0,
+        "auto_fraud": 206,
+        "review": 83,
+        "review_rate": 0.28719723183391005,
+        "auto_coverage": 0.71280276816609,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.7587548638132295,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.34375,
+        "auto_accuracy": 0.9466019417475728,
+        "review_fraud_share": 0.7469879518072289
+      },
+      "gate": {
+        "n": 578,
+        "support": {
+          "正常": 64,
+          "涉诈": 514
+        },
+        "lo": -1.0,
+        "hi": 0.5851415991783142,
+        "auto_normal": 0,
+        "auto_fraud": 450,
+        "review": 128,
+        "review_rate": 0.22145328719723184,
+        "auto_coverage": 0.7785467128027681,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.8365758754863813,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.3125,
+        "auto_accuracy": 0.9555555555555556,
+        "review_fraud_share": 0.65625
+      }
+    },
+    "budget40": {
+      "lo": -1.0,
+      "hi": 0.7130029201507568,
+      "dev": {
+        "n": 289,
+        "support": {
+          "正常": 32,
+          "涉诈": 257
+        },
+        "lo": -1.0,
+        "hi": 0.7130029201507568,
+        "auto_normal": 0,
+        "auto_fraud": 175,
+        "review": 114,
+        "review_rate": 0.3944636678200692,
+        "auto_coverage": 0.6055363321799307,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.6614785992217899,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.15625,
+        "auto_accuracy": 0.9714285714285714,
+        "review_fraud_share": 0.7631578947368421
+      },
+      "gate": {
+        "n": 578,
+        "support": {
+          "正常": 64,
+          "涉诈": 514
+        },
+        "lo": -1.0,
+        "hi": 0.7130029201507568,
+        "auto_normal": 0,
+        "auto_fraud": 369,
+        "review": 209,
+        "review_rate": 0.3615916955017301,
+        "auto_coverage": 0.6384083044982699,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.6964980544747081,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.171875,
+        "auto_accuracy": 0.9701897018970189,
+        "review_fraud_share": 0.7464114832535885
+      }
+    },
+    "budget50": {
+      "lo": -1.0,
+      "hi": 0.7556961178779602,
+      "dev": {
+        "n": 289,
+        "support": {
+          "正常": 32,
+          "涉诈": 257
+        },
+        "lo": -1.0,
+        "hi": 0.7556961178779602,
+        "auto_normal": 0,
+        "auto_fraud": 158,
+        "review": 131,
+        "review_rate": 0.4532871972318339,
+        "auto_coverage": 0.546712802768166,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.6070038910505836,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.0625,
+        "auto_accuracy": 0.9873417721518988,
+        "review_fraud_share": 0.7709923664122137
+      },
+      "gate": {
+        "n": 578,
+        "support": {
+          "正常": 64,
+          "涉诈": 514
+        },
+        "lo": -1.0,
+        "hi": 0.7556961178779602,
+        "auto_normal": 0,
+        "auto_fraud": 343,
+        "review": 235,
+        "review_rate": 0.40657439446366783,
+        "auto_coverage": 0.5934256055363322,
+        "fraud_escape": 0.0,
+        "fraud_auto_catch": 0.6498054474708171,
+        "normal_auto_pass": 0.0,
+        "normal_false_reject": 0.140625,
+        "auto_accuracy": 0.9737609329446064,
+        "review_fraud_share": 0.7659574468085106
+      }
+    }
+  },
+  "frontier_dev": [
+    {
+      "review_budget": 0.1,
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "lo": -1.0,
+      "hi": 0.3088199496269226,
+      "auto_normal": 0,
+      "auto_fraud": 262,
+      "review": 27,
+      "review_rate": 0.09342560553633218,
+      "auto_coverage": 0.9065743944636678,
+      "fraud_escape": 0.0,
+      "fraud_auto_catch": 0.9455252918287937,
+      "normal_auto_pass": 0.0,
+      "normal_false_reject": 0.59375,
+      "auto_accuracy": 0.9274809160305344,
+      "review_fraud_share": 0.5185185185185185
+    },
+    {
+      "review_budget": 0.2,
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "lo": -1.0,
+      "hi": 0.4468294680118561,
+      "auto_normal": 0,
+      "auto_fraud": 248,
+      "review": 41,
+      "review_rate": 0.14186851211072665,
+      "auto_coverage": 0.8581314878892734,
+      "fraud_escape": 0.0,
+      "fraud_auto_catch": 0.9105058365758755,
+      "normal_auto_pass": 0.0,
+      "normal_false_reject": 0.4375,
+      "auto_accuracy": 0.9435483870967742,
+      "review_fraud_share": 0.5609756097560976
+    },
+    {
+      "review_budget": 0.3,
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "lo": -1.0,
+      "hi": 0.5851415991783142,
+      "auto_normal": 0,
+      "auto_fraud": 206,
+      "review": 83,
+      "review_rate": 0.28719723183391005,
+      "auto_coverage": 0.71280276816609,
+      "fraud_escape": 0.0,
+      "fraud_auto_catch": 0.7587548638132295,
+      "normal_auto_pass": 0.0,
+      "normal_false_reject": 0.34375,
+      "auto_accuracy": 0.9466019417475728,
+      "review_fraud_share": 0.7469879518072289
+    },
+    {
+      "review_budget": 0.4,
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "lo": -1.0,
+      "hi": 0.7130029201507568,
+      "auto_normal": 0,
+      "auto_fraud": 175,
+      "review": 114,
+      "review_rate": 0.3944636678200692,
+      "auto_coverage": 0.6055363321799307,
+      "fraud_escape": 0.0,
+      "fraud_auto_catch": 0.6614785992217899,
+      "normal_auto_pass": 0.0,
+      "normal_false_reject": 0.15625,
+      "auto_accuracy": 0.9714285714285714,
+      "review_fraud_share": 0.7631578947368421
+    },
+    {
+      "review_budget": 0.5,
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "lo": -1.0,
+      "hi": 0.7556961178779602,
+      "auto_normal": 0,
+      "auto_fraud": 158,
+      "review": 131,
+      "review_rate": 0.4532871972318339,
+      "auto_coverage": 0.546712802768166,
+      "fraud_escape": 0.0,
+      "fraud_auto_catch": 0.6070038910505836,
+      "normal_auto_pass": 0.0,
+      "normal_false_reject": 0.0625,
+      "auto_accuracy": 0.9873417721518988,
+      "review_fraud_share": 0.7709923664122137
+    },
+    {
+      "review_budget": 0.6,
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "lo": -1.0,
+      "hi": 0.7556961178779602,
+      "auto_normal": 0,
+      "auto_fraud": 158,
+      "review": 131,
+      "review_rate": 0.4532871972318339,
+      "auto_coverage": 0.546712802768166,
+      "fraud_escape": 0.0,
+      "fraud_auto_catch": 0.6070038910505836,
+      "normal_auto_pass": 0.0,
+      "normal_false_reject": 0.0625,
+      "auto_accuracy": 0.9873417721518988,
+      "review_fraud_share": 0.7709923664122137
+    }
+  ]
+}

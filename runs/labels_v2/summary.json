@@ -1,0 +1,118 @@
+{
+  "source": "assets/0729复核人工确认数据.csv",
+  "n": 1447,
+  "label_v2": {
+    "涉诈": 864,
+    "非涉诈": 583
+  },
+  "is_violation": {
+    "1": 1287,
+    "0": 160
+  },
+  "is_fraud": {
+    "1": 864,
+    "0": 583
+  },
+  "risk_level": {
+    "高风险": 1085,
+    "低风险": 198,
+    "合规": 160,
+    "中风险": 4
+  },
+  "scene_category": {
+    "引导贷款用户添加第三方微信": 189,
+    "贷款相关-ab贷": 288,
+    "贷款相关": 257,
+    "违规催收": 135,
+    "正常": 160,
+    "个体工商户年报补录收费": 227,
+    "证券投资类": 147,
+    "企业营销与招商服务": 7,
+    "其他": 1,
+    "引流第三方平台": 13,
+    "网贷平台退息退费": 11,
+    "手机租赁套路贷": 1,
+    "法律服务": 7,
+    "商业地产": 3,
+    "套路运": 1
+  },
+  "label_source": {
+    "old_category": 864,
+    "rule:loan_low": 74,
+    "default_low": 77,
+    "normal_audit": 15,
+    "old_label": 145,
+    "rule:collection_legal_process": 30,
+    "rule:loan_cut_interest": 20,
+    "rule:loan_platform_guide": 30,
+    "rule:loan_debt_opt": 28,
+    "rule:collection_impersonate": 50,
+    "manual_note": 16,
+    "rule:collection_low": 29,
+    "rule:collection_refinance": 7,
+    "rule:loan_medium": 2,
+    "default_category": 1,
+    "rule:traffic_high_channel": 8,
+    "rule:loan_user_adds_wechat": 23,
+    "rule:loan_withdraw": 10,
+    "rule:enterprise_medium_tax": 1,
+    "rule:traffic_user_adds": 5,
+    "rule:legal_low_fee": 7,
+    "rule:estate_medium_renovation": 1,
+    "rule:loan_high_channel": 3,
+    "rule:enterprise_low": 1
+  },
+  "needs_review": {
+    "0": 1312,
+    "1": 135
+  },
+  "risk_by_old_category": {
+    "个体工商户年报补录收费": {
+      "高风险": 227
+    },
+    "企业营销与招商服务": {
+      "低风险": 6,
+      "中风险": 1
+    },
+    "其他": {
+      "高风险": 1
+    },
+    "商业地产": {
+      "中风险": 1,
+      "低风险": 2
+    },
+    "套路运诈骗": {
+      "高风险": 1
+    },
+    "引导贷款用户添加第三方微信": {
+      "高风险": 189
+    },
+    "引流第三方平台": {
+      "高风险": 13
+    },
+    "手机租赁套路贷诈骗": {
+      "高风险": 1
+    },
+    "法律服务": {
+      "低风险": 7
+    },
+    "网贷平台退息退费": {
+      "高风险": 11
+    },
+    "证券投资类": {
+      "高风险": 147
+    },
+    "贷款相关": {
+      "低风险": 139,
+      "高风险": 116,
+      "中风险": 2
+    },
+    "贷款相关-ab贷": {
+      "高风险": 288
+    },
+    "违规催收": {
+      "低风险": 44,
+      "高风险": 91
+    }
+  }
+}

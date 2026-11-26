@@ -1,0 +1,7 @@
+loading Qwen/Qwen3.5-4B ...
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  75%|███████▍  | 318/426 [00:00<00:00, 3129.78it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3142.47it/s]
+rows=3966 layers=[8, 16, 24, 32] mean_prompt_chars=1158
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+extracted (3966, 4, 2560) in 337.0s (0.0850s/row)
+wrote runs/external_cq/features_forward_1103_1113.npz (78.2 MB)

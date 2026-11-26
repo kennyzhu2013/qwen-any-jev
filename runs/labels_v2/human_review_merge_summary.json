@@ -1,0 +1,80 @@
+{
+  "main_csv": "assets/复核数据_v2.csv",
+  "human_review": "assets/10.22agent和人工复核结果.xlsx",
+  "normal_batch": "assets/重庆行业卡人工复核正常数据.xlsx",
+  "n_main_before": 7800,
+  "n_main_after": 9381,
+  "human_applied": 6246,
+  "spec_preserved": 107,
+  "normal_added": 1581,
+  "normal_duplicate_dropped": 1,
+  "scene_changed": 2770,
+  "risk_changed": 2776,
+  "fraud_changed": 47,
+  "normalised_compliant": 147,
+  "proposed_cleared": 7800,
+  "risk_level": {
+    "高风险": 1285,
+    "低风险": 6291,
+    "合规": 1748,
+    "中风险": 57
+  },
+  "is_fraud": {
+    "1": 919,
+    "0": 8462
+  },
+  "is_violation": {
+    "1": 7633,
+    "0": 1748
+  },
+  "cohort": {
+    "human_0729": 1447,
+    "agent_1022": 6353,
+    "human_cq_normal": 1581
+  },
+  "label_source": {
+    "old_category": 864,
+    "rule:loan_low": 74,
+    "spec_review": 242,
+    "old_label": 145,
+    "rule:loan_cut_interest": 20,
+    "rule:loan_platform_guide": 30,
+    "rule:loan_debt_opt": 28,
+    "rule:collection_impersonate": 37,
+    "manual_note": 16,
+    "rule:collection_low": 29,
+    "rule:collection_refinance": 7,
+    "rule:loan_medium": 2,
+    "default_category": 1,
+    "rule:traffic_high_channel": 8,
+    "rule:loan_user_adds_wechat": 23,
+    "rule:loan_withdraw": 10,
+    "rule:enterprise_medium_tax": 1,
+    "rule:traffic_user_adds": 5,
+    "rule:legal_low_fee": 7,
+    "rule:estate_medium_renovation": 1,
+    "rule:loan_high_channel": 3,
+    "rule:enterprise_low": 1,
+    "human_1022": 6246,
+    "human_cq_normal": 1581
+  },
+  "split_sizes": {
+    "cal": 3755,
+    "dev": 1876,
+    "gate": 3750
+  },
+  "clusters": {
+    "n_clusters": 8586,
+    "multi_row_clusters": 91,
+    "largest_cluster": 643,
+    "normal_only_clusters": 1580,
+    "group_ids": 1580,
+    "bridged_clusters_skipped": 0,
+    "normal_split_sizes": {
+      "cal": 633,
+      "dev": 316,
+      "gate": 632
+    }
+  },
+  "precedence": "spec_review rows preserved; other 10.22 rows use human_1022"
+}

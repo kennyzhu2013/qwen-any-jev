@@ -1,0 +1,9 @@
+dev rows=120 normal=32 fraud=88
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  69%|██████▉   | 294/426 [00:00<00:00, 2914.29it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3180.04it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+raw: flip={'n': 120, 'flips': 3, 'rate': 0.025, 'ci95': [0.008538174769902228, 0.0709300333278661]} by_label={'正常': {'n': 32, 'flips': 1, 'rate': 0.03125}, '涉诈': {'n': 88, 'flips': 2, 'rate': 0.022727272727272728}}
+raw+prior(0.5): flip={'n': 120, 'flips': 4, 'rate': 0.03333333333333333, 'ci95': [0.0130375510983506, 0.082580337559106]}
+l0-noprior: flip={'n': 120, 'flips': 0, 'rate': 0.0, 'ci95': [0.0, 0.031019166418703486]} by_label={'正常': {'n': 32, 'flips': 0, 'rate': 0.0}, '涉诈': {'n': 88, 'flips': 0, 'rate': 0.0}}
+l0-noprior+prior(1.0): flip={'n': 120, 'flips': 0, 'rate': 0.0, 'ci95': [0.0, 0.031019166418703486]}
+wrote runs/m0.5/reversal.json

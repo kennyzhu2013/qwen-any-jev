@@ -1,0 +1,81 @@
+{
+  "main_csv": "assets\\复核数据_v2.csv",
+  "conclusion_csv": "runs\\labels_v2\\review_queue_复核结论.csv",
+  "n_main_rows": 7800,
+  "n_backfilled": 242,
+  "not_matched": 0,
+  "label_source_before": {
+    "old_category": 864,
+    "rule:loan_low": 74,
+    "default_low": 77,
+    "normal_audit": 15,
+    "old_label": 145,
+    "rule:collection_legal_process": 30,
+    "rule:loan_cut_interest": 20,
+    "rule:loan_platform_guide": 30,
+    "rule:loan_debt_opt": 28,
+    "rule:collection_impersonate": 50,
+    "manual_note": 16,
+    "rule:collection_low": 29,
+    "rule:collection_refinance": 7,
+    "rule:loan_medium": 2,
+    "default_category": 1,
+    "rule:traffic_high_channel": 8,
+    "rule:loan_user_adds_wechat": 23,
+    "rule:loan_withdraw": 10,
+    "rule:enterprise_medium_tax": 1,
+    "rule:traffic_user_adds": 5,
+    "rule:legal_low_fee": 7,
+    "rule:estate_medium_renovation": 1,
+    "rule:loan_high_channel": 3,
+    "rule:enterprise_low": 1,
+    "cq_agent:llm-fast": 5524,
+    "cq_agent:llm-escalated": 824,
+    "cq_agent:llm-escalated+heuristic": 1,
+    "cq_agent:heuristic": 4
+  },
+  "label_source_after": {
+    "old_category": 864,
+    "rule:loan_low": 74,
+    "spec_review": 242,
+    "old_label": 145,
+    "rule:loan_cut_interest": 20,
+    "rule:loan_platform_guide": 30,
+    "rule:loan_debt_opt": 28,
+    "rule:collection_impersonate": 37,
+    "manual_note": 16,
+    "rule:collection_low": 29,
+    "rule:collection_refinance": 7,
+    "rule:loan_medium": 2,
+    "default_category": 1,
+    "rule:traffic_high_channel": 8,
+    "rule:loan_user_adds_wechat": 23,
+    "rule:loan_withdraw": 10,
+    "rule:enterprise_medium_tax": 1,
+    "rule:traffic_user_adds": 5,
+    "rule:legal_low_fee": 7,
+    "rule:estate_medium_renovation": 1,
+    "rule:loan_high_channel": 3,
+    "rule:enterprise_low": 1,
+    "cq_agent:llm-fast": 5439,
+    "cq_agent:llm-escalated": 807
+  },
+  "is_fraud_after": {
+    "1": 872,
+    "0": 6928
+  },
+  "risk_level_after": {
+    "高风险": 1118,
+    "低风险": 3708,
+    "合规": 2933,
+    "中风险": 41
+  },
+  "needs_review_after": {
+    "0": 7800
+  },
+  "by_review_origin": {
+    "rule_engine": 101,
+    "manual_accepted_engine": 85,
+    "manual_adjudicated": 56
+  }
+}

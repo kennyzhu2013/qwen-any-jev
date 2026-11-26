@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "dataset-curation": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/llm-finetuning/skills/dataset-curation/SKILL.md",
+      "computedHash": "c8ca9daccb435c9f1fa2d2333a6b39ce4eaf650c9461cc7b6df02f672610d8c1"
+    },
+    "eval-harness-first": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/llm-finetuning/skills/eval-harness-first/SKILL.md",
+      "computedHash": "08c0130c7121dadede1281ca45983f22f058a5e992e3a48cf98f0a5d64b29959"
+    },
+    "finetuning-method-selection": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/llm-finetuning/skills/finetuning-method-selection/SKILL.md",
+      "computedHash": "5f27a27e48faa63d681437721f8fb526b8ce7992d9292b610ae2f11b110e6798"
+    },
+    "lora-qlora-recipes": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/llm-finetuning/skills/lora-qlora-recipes/SKILL.md",
+      "computedHash": "2aa78f9bae1a7561e256009eb63c20e9329016a5544677543d65bc54003e36e6"
+    }
+  }
+}

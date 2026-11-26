@@ -1,0 +1,1093 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": null,
+    "goldens": "/tmp/dev_smoke_q1.jsonl",
+    "n_rows": 67,
+    "synthetic": false,
+    "anyjev_version": "0.3.0",
+    "transformers_version": "5.22.1",
+    "torch_version": "2.6.0+cu124",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "batch_size": 8,
+    "timing_repeats": 1,
+    "backend": {
+      "model_class": "Qwen3_5ForCausalLM",
+      "config_class": "Qwen3_5TextConfig",
+      "n_layers": 32,
+      "hidden_size": 2560,
+      "tokenizer_class": "Qwen3_5Tokenizer",
+      "shared_fallbacks": 0,
+      "param_dtype": "torch.bfloat16"
+    },
+    "question": "请根据以下复核规范判断通话风险：\n【正常】银行或持牌机构正常贷款营销；助贷服务费合理（一般不超过10个点）且无第三方介入；外呼人员主动添加用户微信且无其他违规；正常客服、售后、普通商品营销；无虚假身份、无包过承诺、无提前收费。\n【涉诈】贷款中介要求第三方担保、到场、收款、背调或包装资料（ab贷）；引导用户添加第三方微信；以年报补录、税务申报名义收费；荐股或引导进入投资平台/群、下载非官方APP；冒充公检法、律所、调解中心催收，威胁冻结/上门，要求对公转账；网贷退息退费；其他以收费或引流为目的的套路。\n【原则】同时符合多个类型时，按风险更高的类型判断；仅有正常贷款推销、利率和额度介绍，无上述违规的，属正常。\n请判断该通话对应的业务是否需要按涉诈风险处置：",
+    "options": [
+      "正常",
+      "涉诈"
+    ],
+    "prior": "batch",
+    "max_perms": null,
+    "canonical_order": true,
+    "notes": [
+      "Samples are synthetic smoke-test rows, not the Phase 0 goldens; metrics are not a quality claim.",
+      "AnyJev 0.3.0 implements raw and L0 only; L1 here is post-hoc temperature scaling fit in-sample.",
+      "L0 uses a batch prior estimated from the same rows; no labels are used in the prior, but the eval batch's class composition does enter the correction.",
+      "L0-noprior isolates permutation marginalization from prior correction; L0-cf uses content-free probes and costs extra forward passes.",
+      "Timing is the median of --timing-repeats runs (fresh Decider each run) after a one-row warmup; it excludes model load and is not a serving benchmark.",
+      "A 12-row run cannot support a promotion decision; it validates the API and pipeline."
+    ]
+  },
+  "results": {
+    "raw": {
+      "config": "raw",
+      "elapsed_s": 7.078831698745489,
+      "timing_runs_s": [
+        7.078831698745489
+      ],
+      "per_row_s": 0.1056542044588879,
+      "decider_stats": {
+        "backend_calls": 1,
+        "flat_prompts": 67,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 0,
+        "adaptive_shifts_total": 0
+      },
+      "rows": [
+        {
+          "id": "dev-q1-000",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9046505428129514,
+          "probs": [
+            0.09534945718704857,
+            0.9046505428129514
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993200493232848
+          }
+        },
+        {
+          "id": "dev-q1-001",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.6791786926816161,
+          "probs": [
+            0.3208213073183839,
+            0.6791786926816161
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990476195620623
+          }
+        },
+        {
+          "id": "dev-q1-002",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.7981867801399695,
+          "probs": [
+            0.2018132198600306,
+            0.7981867801399695
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.998419875580616
+          }
+        },
+        {
+          "id": "dev-q1-003",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.5621765008857981,
+          "probs": [
+            0.5621765008857981,
+            0.43782349911420193
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9988933998461462
+          }
+        },
+        {
+          "id": "dev-q1-004",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8354835350552604,
+          "probs": [
+            0.16451646494473965,
+            0.8354835350552604
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9987893503142148
+          }
+        },
+        {
+          "id": "dev-q1-005",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.7772998611746911,
+          "probs": [
+            0.22270013882530884,
+            0.7772998611746911
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9986795933614523
+          }
+        },
+        {
+          "id": "dev-q1-006",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8354835350552604,
+          "probs": [
+            0.16451646494473965,
+            0.8354835350552604
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989118756818904
+          }
+        },
+        {
+          "id": "dev-q1-007",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.5312093733737563,
+          "probs": [
+            0.46879062662624377,
+            0.5312093733737563
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990177604850495
+          }
+        },
+        {
+          "id": "dev-q1-008",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9982992775881694,
+          "probs": [
+            0.0017007224118305946,
+            0.9982992775881694
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999875891435398
+          }
+        },
+        {
+          "id": "dev-q1-009",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9324533107374443,
+          "probs": [
+            0.06754668926255561,
+            0.9324533107374443
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993290288537799
+          }
+        },
+        {
+          "id": "dev-q1-010",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9465966726483187,
+          "probs": [
+            0.05340332735168128,
+            0.9465966726483187
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991562913738948
+          }
+        },
+        {
+          "id": "dev-q1-011",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.7310585786300049,
+          "probs": [
+            0.2689414213699951,
+            0.7310585786300049
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991146073282354
+          }
+        },
+        {
+          "id": "dev-q1-012",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.651354857898194,
+          "probs": [
+            0.3486451421018059,
+            0.651354857898194
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992167176292349
+          }
+        },
+        {
+          "id": "dev-q1-013",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.5312093733737563,
+          "probs": [
+            0.5312093733737563,
+            0.46879062662624377
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992186892255093
+          }
+        },
+        {
+          "id": "dev-q1-014",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.8519528038477825,
+          "probs": [
+            0.8519528038477825,
+            0.1480471961522176
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993027135022657
+          }
+        },
+        {
+          "id": "dev-q1-015",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8519528076067261,
+          "probs": [
+            0.14804719239327382,
+            0.8519528076067261
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990584409674149
+          }
+        },
+        {
+          "id": "dev-q1-016",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.731058584489497,
+          "probs": [
+            0.26894141551050293,
+            0.731058584489497
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9987585723577466
+          }
+        },
+        {
+          "id": "dev-q1-017",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8933094039240554,
+          "probs": [
+            0.10669059607594457,
+            0.8933094039240554
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9988507326764288
+          }
+        },
+        {
+          "id": "dev-q1-018",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.5926665999540697,
+          "probs": [
+            0.4073334000459302,
+            0.5926665999540697
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9985981284488916
+          }
+        },
+        {
+          "id": "dev-q1-019",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.5926665999540697,
+          "probs": [
+            0.4073334000459302,
+            0.5926665999540697
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989655006343632
+          }
+        },
+        {
+          "id": "dev-q1-020",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9465966745315055,
+          "probs": [
+            0.05340332546849447,
+            0.9465966745315055
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991784810743783
+          }
+        },
+        {
+          "id": "dev-q1-021",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.5621765008857981,
+          "probs": [
+            0.43782349911420193,
+            0.5621765008857981
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9983531728665369
+          }
+        },
+        {
+          "id": "dev-q1-022",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.731058584489497,
+          "probs": [
+            0.26894141551050293,
+            0.731058584489497
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9987553577078243
+          }
+        },
+        {
+          "id": "dev-q1-023",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8670357494949105,
+          "probs": [
+            0.13296425050508953,
+            0.8670357494949105
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990942385740295
+          }
+        },
+        {
+          "id": "dev-q1-024",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9046505357435624,
+          "probs": [
+            0.09534946425643774,
+            0.9046505357435624
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990507817086802
+          }
+        },
+        {
+          "id": "dev-q1-025",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8670357735451834,
+          "probs": [
+            0.1329642264548166,
+            0.8670357735451834
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989603201839656
+          }
+        },
+        {
+          "id": "dev-q1-026",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.7981867729389246,
+          "probs": [
+            0.2018132270610754,
+            0.7981867729389246
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992013990139079
+          }
+        },
+        {
+          "id": "dev-q1-027",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9399133477220883,
+          "probs": [
+            0.0600866522779117,
+            0.9399133477220883
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.998963835883046
+          }
+        },
+        {
+          "id": "dev-q1-028",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9465966739665496,
+          "probs": [
+            0.05340332603345051,
+            0.9465966739665496
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992639961174636
+          }
+        },
+        {
+          "id": "dev-q1-029",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8807970889295664,
+          "probs": [
+            0.11920291107043361,
+            0.8807970889295664
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989808153271131
+          }
+        },
+        {
+          "id": "dev-q1-030",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.754914975839675,
+          "probs": [
+            0.2450850241603249,
+            0.754914975839675
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9986852599460168
+          }
+        },
+        {
+          "id": "dev-q1-031",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.957912268029248,
+          "probs": [
+            0.04208773197075204,
+            0.957912268029248
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993116378935378
+          }
+        },
+        {
+          "id": "dev-q1-032",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6791786926816161,
+          "probs": [
+            0.3208213073183839,
+            0.6791786926816161
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9984300608206104
+          }
+        },
+        {
+          "id": "dev-q1-033",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9465966660571644,
+          "probs": [
+            0.053403333942835626,
+            0.9465966660571644
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990775594083242
+          }
+        },
+        {
+          "id": "dev-q1-034",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9669140206578809,
+          "probs": [
+            0.03308597934211908,
+            0.9669140206578809
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989546457412619
+          }
+        },
+        {
+          "id": "dev-q1-035",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9149009474519222,
+          "probs": [
+            0.08509905254807777,
+            0.9149009474519222
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990529218589255
+          }
+        },
+        {
+          "id": "dev-q1-036",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9046505351008906,
+          "probs": [
+            0.0953494648991095,
+            0.9046505351008906
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9988095153446727
+          }
+        },
+        {
+          "id": "dev-q1-037",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8354835289107309,
+          "probs": [
+            0.16451647108926923,
+            0.8354835289107309
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9987853838743105
+          }
+        },
+        {
+          "id": "dev-q1-038",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9706877663867577,
+          "probs": [
+            0.029312233613242332,
+            0.9706877663867577
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999411014711651
+          }
+        },
+        {
+          "id": "dev-q1-039",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8807970858005139,
+          "probs": [
+            0.11920291419948606,
+            0.8807970858005139
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990691561524755
+          }
+        },
+        {
+          "id": "dev-q1-040",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9914225163999415,
+          "probs": [
+            0.008577483600058425,
+            0.9914225163999415
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995615610625095
+          }
+        },
+        {
+          "id": "dev-q1-041",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9669140253057785,
+          "probs": [
+            0.03308597469422146,
+            0.9669140253057785
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994262344912672
+          }
+        },
+        {
+          "id": "dev-q1-042",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9399133439350609,
+          "probs": [
+            0.060086656064939244,
+            0.9399133439350609
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993322922257813
+          }
+        },
+        {
+          "id": "dev-q1-043",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9626731102463355,
+          "probs": [
+            0.03732688975366456,
+            0.9626731102463355
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993299838450941
+          }
+        },
+        {
+          "id": "dev-q1-044",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9324533149608596,
+          "probs": [
+            0.0675466850391404,
+            0.9324533149608596
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993281383036623
+          }
+        },
+        {
+          "id": "dev-q1-045",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.979667646175016,
+          "probs": [
+            0.02033235382498389,
+            0.979667646175016
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995246771772079
+          }
+        },
+        {
+          "id": "dev-q1-046",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9399133544545812,
+          "probs": [
+            0.06008664554541885,
+            0.9399133544545812
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993643944546097
+          }
+        },
+        {
+          "id": "dev-q1-047",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9149009607937928,
+          "probs": [
+            0.0850990392062072,
+            0.9149009607937928
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9987718123761758
+          }
+        },
+        {
+          "id": "dev-q1-048",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.754914997895581,
+          "probs": [
+            0.24508500210441886,
+            0.754914997895581
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9980883606280265
+          }
+        },
+        {
+          "id": "dev-q1-049",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.5621765008857981,
+          "probs": [
+            0.43782349911420193,
+            0.5621765008857981
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9985288514690127
+          }
+        },
+        {
+          "id": "dev-q1-050",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7057850340255385,
+          "probs": [
+            0.2942149659744614,
+            0.7057850340255385
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9988023278019518
+          }
+        },
+        {
+          "id": "dev-q1-051",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8933094159957173,
+          "probs": [
+            0.10669058400428263,
+            0.8933094159957173
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9984460819072006
+          }
+        },
+        {
+          "id": "dev-q1-052",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9149009538328171,
+          "probs": [
+            0.9149009538328171,
+            0.08509904616718289
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994124943639601
+          }
+        },
+        {
+          "id": "dev-q1-053",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7772998611746911,
+          "probs": [
+            0.22270013882530884,
+            0.7772998611746911
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9984315200494712
+          }
+        },
+        {
+          "id": "dev-q1-054",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9241418225903234,
+          "probs": [
+            0.07585817740967664,
+            0.9241418225903234
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991648521468397
+          }
+        },
+        {
+          "id": "dev-q1-055",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5312093733737563,
+          "probs": [
+            0.5312093733737563,
+            0.46879062662624377
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989597642683778
+          }
+        },
+        {
+          "id": "dev-q1-056",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.5621765008857981,
+          "probs": [
+            0.43782349911420193,
+            0.5621765008857981
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9989076296935194
+          }
+        },
+        {
+          "id": "dev-q1-057",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7981867729389246,
+          "probs": [
+            0.2018132270610754,
+            0.7981867729389246
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992318926859591
+          }
+        },
+        {
+          "id": "dev-q1-058",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9964063967224452,
+          "probs": [
+            0.0035936032775546736,
+            0.9964063967224452
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9998719766601394
+          }
+        },
+        {
+          "id": "dev-q1-059",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5312093733737563,
+          "probs": [
+            0.5312093733737563,
+            0.46879062662624377
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991800963382005
+          }
+        },
+        {
+          "id": "dev-q1-060",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9975273769427154,
+          "probs": [
+            0.002472623057284519,
+            0.9975273769427154
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9998321542004398
+          }
+        },
+        {
+          "id": "dev-q1-061",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9914225142219733,
+          "probs": [
+            0.008577485778026712,
+            0.9914225142219733
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997758128580445
+          }
+        },
+        {
+          "id": "dev-q1-062",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9626731147976793,
+          "probs": [
+            0.037326885202320616,
+            0.9626731147976793
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994204098847677
+          }
+        },
+        {
+          "id": "dev-q1-063",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9820137895115189,
+          "probs": [
+            0.017986210488481237,
+            0.9820137895115189
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993879743518485
+          }
+        },
+        {
+          "id": "dev-q1-064",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9241418272911436,
+          "probs": [
+            0.07585817270885642,
+            0.9241418272911436
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991596732488315
+          }
+        },
+        {
+          "id": "dev-q1-065",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9840936099792731,
+          "probs": [
+            0.015906390020726816,
+            0.9840936099792731
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996155024650378
+          }
+        },
+        {
+          "id": "dev-q1-066",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7057850154599563,
+          "probs": [
+            0.2942149845400438,
+            0.7057850154599563
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9987010633706523
+          }
+        }
+      ],
+      "metrics": {
+        "n": 67,
+        "accuracy": 0.5223880597014925,
+        "macro_tpr": 0.5040178571428571,
+        "ece_10bin": 0.3076352896293455,
+        "brier": 0.6621823485664922,
+        "nll": 1.0116093256207135,
+        "mean_confidence": 0.8300233493308381,
+        "answers": {
+          "正常": 6,
+          "涉诈": 61
+        },
+        "per_class": {
+          "正常": {
+            "support": 32,
+            "predicted": 6,
+            "tpr": 0.09375,
+            "tnr": 0.9142857142857143
+          },
+          "涉诈": {
+            "support": 35,
+            "predicted": 61,
+            "tpr": 0.9142857142857143,
+            "tnr": 0.09375
+          }
+        }
+      }
+    }
+  }
+}

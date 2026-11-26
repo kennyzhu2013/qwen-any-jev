@@ -1,0 +1,49 @@
+rows cal=3755 dev=1876 gate=3750 layers=[8, 16, 24, 32] options=[np.str_('非涉诈'), np.str_('涉诈')]
+layer= 8 l2=0.0001 cw=none     score=0.8648 acc=0.9547 fraud_recall=0.7526881720430108 normal_recall=0.9769230769230769
+layer= 8 l2=0.001  cw=none     score=0.8633 acc=0.9563 fraud_recall=0.7473118279569892 normal_recall=0.9792899408284024
+layer= 8 l2=0.01   cw=none     score=0.8612 acc=0.9568 fraud_recall=0.7419354838709677 normal_recall=0.9804733727810651
+layer= 8 l2=0.1    cw=none     score=0.8110 acc=0.9526 fraud_recall=0.6344086021505376 normal_recall=0.9875739644970414
+layer= 8 l2=1      cw=none     score=0.7088 acc=0.9366 fraud_recall=0.42473118279569894 normal_recall=0.9928994082840237
+layer= 8 l2=0.0001 cw=balanced score=0.8753 acc=0.9478 fraud_recall=0.7849462365591398 normal_recall=0.9656804733727811
+layer= 8 l2=0.001  cw=balanced score=0.8735 acc=0.9446 fraud_recall=0.7849462365591398 normal_recall=0.9621301775147929
+layer= 8 l2=0.01   cw=balanced score=0.8771 acc=0.9424 fraud_recall=0.7956989247311828 normal_recall=0.9585798816568047
+layer= 8 l2=0.1    cw=balanced score=0.8940 acc=0.9296 fraud_recall=0.8494623655913979 normal_recall=0.9384615384615385
+layer= 8 l2=1      cw=balanced score=0.8930 acc=0.8934 fraud_recall=0.8924731182795699 normal_recall=0.893491124260355
+layer=16 l2=0.0001 cw=none     score=0.9135 acc=0.9691 fraud_recall=0.8440860215053764 normal_recall=0.9828402366863905
+layer=16 l2=0.001  cw=none     score=0.9149 acc=0.9717 fraud_recall=0.8440860215053764 normal_recall=0.9857988165680474
+layer=16 l2=0.01   cw=none     score=0.9102 acc=0.9717 fraud_recall=0.8333333333333334 normal_recall=0.98698224852071
+layer=16 l2=0.1    cw=none     score=0.8845 acc=0.9686 fraud_recall=0.7795698924731183 normal_recall=0.9893491124260355
+layer=16 l2=1      cw=none     score=0.8116 acc=0.9579 fraud_recall=0.6290322580645161 normal_recall=0.9940828402366864
+layer=16 l2=0.0001 cw=balanced score=0.9159 acc=0.9648 fraud_recall=0.8548387096774194 normal_recall=0.9769230769230769
+layer=16 l2=0.001  cw=balanced score=0.9186 acc=0.9654 fraud_recall=0.8602150537634409 normal_recall=0.9769230769230769
+layer=16 l2=0.01   cw=balanced score=0.9278 acc=0.9648 fraud_recall=0.8817204301075269 normal_recall=0.9739644970414201
+layer=16 l2=0.1    cw=balanced score=0.9458 acc=0.9627 fraud_recall=0.9247311827956989 normal_recall=0.9668639053254438
+layer=16 l2=1      cw=balanced score=0.9316 acc=0.9286 fraud_recall=0.9354838709677419 normal_recall=0.927810650887574
+layer=24 l2=0.0001 cw=none     score=0.9018 acc=0.9739 fraud_recall=0.8118279569892473 normal_recall=0.991715976331361
+layer=24 l2=0.001  cw=none     score=0.9080 acc=0.9765 fraud_recall=0.8225806451612904 normal_recall=0.993491124260355
+layer=24 l2=0.01   cw=none     score=0.9027 acc=0.9755 fraud_recall=0.8118279569892473 normal_recall=0.993491124260355
+layer=24 l2=0.1    cw=none     score=0.8833 acc=0.9707 fraud_recall=0.7741935483870968 normal_recall=0.9923076923076923
+layer=24 l2=1      cw=none     score=0.8399 acc=0.9616 fraud_recall=0.6881720430107527 normal_recall=0.991715976331361
+layer=24 l2=0.0001 cw=balanced score=0.9221 acc=0.9760 fraud_recall=0.8548387096774194 normal_recall=0.9893491124260355
+layer=24 l2=0.001  cw=balanced score=0.9242 acc=0.9755 fraud_recall=0.8602150537634409 normal_recall=0.9881656804733728
+layer=24 l2=0.01   cw=balanced score=0.9353 acc=0.9739 fraud_recall=0.8870967741935484 normal_recall=0.9834319526627219
+layer=24 l2=0.1    cw=balanced score=0.9524 acc=0.9659 fraud_recall=0.9354838709677419 normal_recall=0.9692307692307692
+layer=24 l2=1      cw=balanced score=0.9423 acc=0.9435 fraud_recall=0.9408602150537635 normal_recall=0.9437869822485208
+layer=32 l2=0.0001 cw=none     score=0.9060 acc=0.9728 fraud_recall=0.8225806451612904 normal_recall=0.9893491124260355
+layer=32 l2=0.001  cw=none     score=0.9087 acc=0.9733 fraud_recall=0.8279569892473119 normal_recall=0.9893491124260355
+layer=32 l2=0.01   cw=none     score=0.9095 acc=0.9749 fraud_recall=0.8279569892473119 normal_recall=0.9911242603550295
+layer=32 l2=0.1    cw=none     score=0.8880 acc=0.9707 fraud_recall=0.7849462365591398 normal_recall=0.9911242603550295
+layer=32 l2=1      cw=none     score=0.8289 acc=0.9590 fraud_recall=0.6666666666666666 normal_recall=0.9911242603550295
+layer=32 l2=0.0001 cw=balanced score=0.9245 acc=0.9717 fraud_recall=0.8655913978494624 normal_recall=0.9834319526627219
+layer=32 l2=0.001  cw=balanced score=0.9350 acc=0.9733 fraud_recall=0.8870967741935484 normal_recall=0.9828402366863905
+layer=32 l2=0.01   cw=balanced score=0.9416 acc=0.9723 fraud_recall=0.9032258064516129 normal_recall=0.9798816568047337
+layer=32 l2=0.1    cw=balanced score=0.9500 acc=0.9659 fraud_recall=0.9301075268817204 normal_recall=0.9698224852071006
+layer=32 l2=1      cw=balanced score=0.9503 acc=0.9536 fraud_recall=0.946236559139785 normal_recall=0.9544378698224852
+
+selected layer=24 l2=0.1 cw=balanced
+dev metrics: {"n": 1876, "support": {"非涉诈": 1690, "涉诈": 186}, "confusion": {"tn": 1638, "fp": 52, "fn": 12, "tp": 174}, "accuracy": 0.9658848614072495, "balanced_accuracy": 0.9523573200992556, "fraud_recall": 0.9354838709677419, "fraud_recall_ci95": [0.8906313278648095, 0.9627123042709376], "normal_recall_tnr": 0.9692307692307692, "normal_recall_ci95": [0.9598740274379808, 0.9764591764406297], "fraud_precision": 0.7699115044247787, "fraud_precision_ci95": [0.7108007660737361, 0.8199999024652487], "fraud_f1": 0.8446601941747574, "macro_tpr": 0.9523573200992556, "mcc": 0.8306446092478724, "predicted": {"非涉诈": 1650, "涉诈": 226}, "mean_confidence": 0.956713626284335, "ece_10bin": 0.010668308972549903, "brier": 0.05150291045013077, "nll": 0.09115179371576385, "pr_auc": 0.9364571310054435, "roc_auc": 0.9913564929693962, "recall_at_fpr": [{"max_fpr": 0.01, "threshold": 0.9999350309371948, "fpr": 0.0, "recall": 0.005376344086021506}, {"max_fpr": 0.05, "threshold": 0.9999350309371948, "fpr": 0.0, "recall": 0
+
+dev metrics (refit on cal): {"n": 1876, "support": {"非涉诈": 1690, "涉诈": 186}, "confusion": {"tn": 1638, "fp": 52, "fn": 12, "tp": 174}, "accuracy": 0.9658848614072495, "balanced_accuracy": 0.9523573200992556, "fraud_recall": 0.9354838709677419, "fraud_recall_ci95": [0.8906313278648095, 0.9627123042709376], "normal_recall_tnr": 0.9692307692307692, "normal_recall_ci95": [0.9598740274379808, 0.9764591764406297], "fraud_precision": 0.7699115044247787, "fraud_precision_ci95": [0.7108007660737361, 0.8199999024652487], "fraud_f1": 0.8446601941747574, "macro_tpr": 0.9523573200992556, "mcc": 0.8306446092478724, "predicted": {"非涉诈": 1650, "涉诈": 226}, "mean_confidence": 0.956713626284335, "ece_10bin": 0.010668308972549903, "brier": 0.05150291045013077, "nll": 0.09115179371576385, "pr_auc": 0.9364571310054435, "roc_auc": 0.9913564929693962, "recall_at_fpr": [{"max_fpr": 0.01, "threshold": 0.9999350309371948, "fpr": 0.0, "recall": 0.005376344086021506}, {"max_fpr": 0.05, "threshold": 0.9999350309371948, "fpr": 0.0, "recall": 0
+dev fpr_5: threshold=0.3075 acc=0.9515 fraud_recall=0.9624 normal_recall=0.9503
+dev fpr_10: threshold=0.1403 acc=0.9088 fraud_recall=0.9892 normal_recall=0.9000
+wrote runs/v2/probe/probe_grid.json, probe_head.npz, predictions.jsonl

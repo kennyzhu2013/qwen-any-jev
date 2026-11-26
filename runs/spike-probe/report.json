@@ -1,0 +1,328 @@
+{
+  "args": {
+    "command": "probe",
+    "model": "Qwen/Qwen3.5-4B",
+    "hf_endpoint": "https://hf-mirror.com",
+    "trust_remote_code": false,
+    "json_out": "runs/spike-probe/report.json",
+    "goldens": "scripts/spike_samples.jsonl",
+    "levels": "raw,L0",
+    "limit": null,
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "batch_size": 8,
+    "revision": null,
+    "prior": "batch",
+    "min_prior_n": 1,
+    "max_perms": null,
+    "no_canonical_order": false,
+    "adaptive_min_shifts": 2,
+    "adaptive_target": 0.01,
+    "no_reversal": false,
+    "out": null
+  },
+  "command": "probe",
+  "python": "3.12.0 (main, Nov  3 2026, 15:38:39) [GCC 8.3.1 20191121 (Anolis 8.3.1-5.0.1)]",
+  "python_executable": "/home/zhuwei6/risk-jev/.venv312/bin/python",
+  "anyjev_version": "0.3.0",
+  "anyjev_file": "/home/zhuwei6/risk-jev/.venv312/lib/python3.12/site-packages/anyjev/__init__.py",
+  "anyjev_exports": [
+    "Decider",
+    "Decision",
+    "DecisionSet",
+    "LevelError",
+    "Question",
+    "Tacit",
+    "calibrate",
+    "decider",
+    "question",
+    "readout",
+    "result",
+    "state",
+    "tacit"
+  ],
+  "torch_version": "2.6.0+cu124",
+  "transformers_version": "5.22.1",
+  "accelerate_version": "1.15.0",
+  "numpy_version": "2.5.4",
+  "cuda_available": true,
+  "cuda_device_count": 8,
+  "cuda_devices": [
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB",
+    "NVIDIA A100-PCIE-40GB"
+  ],
+  "anyjev.Decision.fields": {
+    "question": "Question",
+    "probs": "np.ndarray",
+    "level": "str",
+    "diagnostics": "Dict[str, Any]"
+  },
+  "anyjev.Decision.public": [
+    "answer",
+    "argmax",
+    "confidence",
+    "distribution",
+    "p_true",
+    "require",
+    "to_dict",
+    "value"
+  ],
+  "anyjev.Decision.doc": "Decision(question: 'Question', probs: 'np.ndarray', level: 'str', diagnostics: 'Dict[str, Any]' = <factory>)",
+  "anyjev.Decider.fields": {},
+  "anyjev.Decider.public": [
+    "DEFAULT_PRIOR_STRENGTH",
+    "calibrate_adaptive",
+    "decide",
+    "decide_batch",
+    "running_prior",
+    "strength"
+  ],
+  "anyjev.Decider.doc": "",
+  "anyjev.Question.fields": {
+    "kind": "str",
+    "text": "str",
+    "options": "tuple",
+    "name": "Optional[str]",
+    "scale": "tuple",
+    "ordered": "bool",
+    "centers": "Optional[tuple]"
+  },
+  "anyjev.Question.public": [
+    "bin_centers",
+    "centers",
+    "choice",
+    "id",
+    "k",
+    "key",
+    "name",
+    "noul",
+    "ordered",
+    "scale",
+    "score"
+  ],
+  "anyjev.Question.doc": "A typed question. Build with Question.choice / .score / .noul.",
+  "Decider.__init__": "(self, backend, *, level: 'str' = 'L0', prior: 'str' = 'batch', min_prior_n: 'int' = 8, prior_strength: 'Optional[float]' = None, max_permutations: 'Optional[int]' = None, combine: 'str' = 'logmean', cf_probes: 'Sequence[str]' = ('N/A', '', '[MASK]'), record_content_free: 'bool' = False, system: 'str' = 'You are a decision function. You will be given a state and one question. Reply with the answer label only: no words, no punctuation, no explanation.', shared_prefix='auto', shared_min_prefix_tokens: 'int' = 256, adaptive_shifts: 'bool' = False, adaptive_min_shifts: 'int' = 2, adaptive_margin: 'Optional[float]' = None, adaptive_stat: 'str' = 'logit', adaptive_target: 'float' = 0.01, adaptive_wave: 'int' = 2, adaptive_order: 'str' = 'spread', canonical_order: 'bool' = False)",
+  "Decider.decide": "(self, state: 'Any', questions: 'Sequence[Question]', level: 'Optional[str]' = None, require: 'Optional[str]' = None) -> 'DecisionSet'",
+  "Decider.calibration_methods": [
+    "calibrate_adaptive"
+  ],
+  "Question.choice": "(text: 'str', options: 'Sequence[str]', name: 'Optional[str]' = None) -> \"'Question'\"",
+  "Question.choice.doc": "",
+  "Question.noul": "(text: 'str', name: 'Optional[str]' = None) -> \"'Question'\"",
+  "Question.noul.doc": "",
+  "Question.score": "(text: 'str', bins: 'int' = 5, scale: 'Sequence[float]' = (0.0, 1.0), name: 'Optional[str]' = None, levels: 'Optional[Sequence[str]]' = None) -> \"'Question'\"",
+  "Question.score.doc": "Either `bins` equal-width bins over `scale`, or explicit ordered\n`levels` (descriptions); with levels the value is the level index.",
+  "anyjev.question.constants": {
+    "MAX_OPTIONS": "26"
+  },
+  "anyjev.decider.constants": {
+    "DEFAULT_LOG_MARGIN": "8.5",
+    "DEFAULT_PROBES": "('N/A', '', '[MASK]')",
+    "DEFAULT_SYSTEM": "'You are a decision function. You will be given a state and one question. Reply with the answer label only: no words, no punctuation, no explanation.'",
+    "LEVELS": "('raw', 'L0')",
+    "PRIORS": "('batch', 'content_free', 'none')"
+  },
+  "anyjev.calibration.import": {
+    "error": "ModuleNotFoundError(\"No module named 'anyjev.calibration'\")"
+  },
+  "hf_backend_public": [
+    "Dict",
+    "HFBackend",
+    "List",
+    "Optional",
+    "Sequence",
+    "Tuple",
+    "annotations",
+    "inspect",
+    "np"
+  ],
+  "HFBackend.HFBackend.init": "(self, model_name: 'str', device: 'str' = 'cuda', dtype: 'str' = 'bfloat16', batch_size: 'int' = 16, trust_remote_code: 'bool' = False, revision: 'Optional[str]' = None, **model_kwargs)",
+  "HFBackend.HFBackend.public": [
+    "hidden_states",
+    "hidden_states_to",
+    "next_token_logprobs",
+    "score_shared"
+  ],
+  "HFBackend.HFBackend.doc": "",
+  "Decision.source": "@dataclass\nclass Decision:\n    question: Question\n    probs: np.ndarray            # [K] over question.options, sums to 1\n    level: str                   # \"raw\" | \"L0\"\n    diagnostics: Dict[str, Any] = field(default_factory=dict)\n\n    # ---- generic ------------------------------------------------------\n    @property\n    def distribution(self) -> Dict[str, float]:\n        return {o: float(p) for o, p in zip(self.question.options, self.probs)}\n\n    @property\n    def argmax(self) -> str:\n        return self.question.options[int(np.argmax(self.probs))]\n\n    @property\n    def answer(self):\n        if self.question.kind == \"noul\":\n            return self.p_true >= 0.5\n        if self.question.kind == \"score\":\n            return self.value\n        return self.argmax\n\n    @property\n    def confidence(self) -> float:\n        return float(np.max(self.probs))\n\n    # ---- noul ---------------------------------------------------------\n    @property\n    def p_true(self) -> float:\n        if self.question.kind != \"noul\":\n            raise AttributeError(\"p_true is only defined for noul questions\")\n        return float(self.probs[0])\n\n    # ---- score --------------------------------------------------------\n    @property\n    def value(self) -> float:\n        if self.question.kind != \"score\":\n            raise AttributeError(\"value is only defined for score questions\")\n        centers = np.asarray(self.question.bin_centers())\n        return float(np.dot(self.probs, centers))\n\n    def require(self, level: str) -> \"Decision\":\n        \"\"\"Raise LevelError unless this decision carries at least `level`. Lets downstream\n        code refuse to act on a raw probability where it needs a debiased (L0) one.\"\"\"\n        return require_level(self, level)\n\n    def to_dict(self) -> Dict[str, Any]:\n        out: Dict[str, Any] = {\n            \"kind\": self.question.kind,\n            \"level\": self.level,\n            \"answer\": self.answer,\n            \"confidence\": self.confidence,\n        }\n        if self.question.kind == \"noul\":\n            out[\"probability\"] = self.p_true\n        elif self.question.kind == \"score\":\n            out[\"value\"] = self.value\n            out[\"distribution\"] = self.distribution\n        else:\n            out[\"distribution\"] = self.distribution\n        return out\n\n    def __repr__(self) -> str:\n        return f\"Decision({self.question.id}: {self.answer!r}, conf={self.confidence:.3f}, level={self.level})\"",
+  "package_layout": [
+    "__init__.py",
+    "backends/__init__.py",
+    "backends/base.py",
+    "backends/fake.py",
+    "backends/hf.py",
+    "backends/vllm.py",
+    "calibrate/__init__.py",
+    "calibrate/contextual.py",
+    "calibrate/permute.py",
+    "calibrate/stopping.py",
+    "decider.py",
+    "question.py",
+    "readout.py",
+    "result.py",
+    "serve.py",
+    "state.py",
+    "tacit.py",
+    "truncate.py"
+  ],
+  "model_config": {
+    "class": "Qwen3_5Config",
+    "model_type": "qwen3_5",
+    "architectures": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "is_encoder_decoder": false,
+    "vocab_size": null,
+    "text_config": "Qwen3_5TextConfig"
+  },
+  "tokenizer_class": "Qwen3_5Tokenizer",
+  "tokenizer_vocab_size": 248077,
+  "has_chat_template": true,
+  "letter_variants": {
+    "A": {
+      "ids": [
+        32
+      ],
+      "tokens": [
+        "A"
+      ],
+      "single_token": true
+    },
+    " A": {
+      "ids": [
+        357
+      ],
+      "tokens": [
+        "ĠA"
+      ],
+      "single_token": true
+    },
+    "A)": {
+      "ids": [
+        32,
+        8
+      ],
+      "tokens": [
+        "A",
+        ")"
+      ],
+      "single_token": false
+    },
+    " A)": {
+      "ids": [
+        357,
+        8
+      ],
+      "tokens": [
+        "ĠA",
+        ")"
+      ],
+      "single_token": false
+    },
+    "(A)": {
+      "ids": [
+        4205,
+        8
+      ],
+      "tokens": [
+        "(A",
+        ")"
+      ],
+      "single_token": false
+    },
+    "A.": {
+      "ids": [
+        32,
+        13
+      ],
+      "tokens": [
+        "A",
+        "."
+      ],
+      "single_token": false
+    },
+    " A.": {
+      "ids": [
+        357,
+        13
+      ],
+      "tokens": [
+        "ĠA",
+        "."
+      ],
+      "single_token": false
+    },
+    "a": {
+      "ids": [
+        64
+      ],
+      "tokens": [
+        "a"
+      ],
+      "single_token": true
+    },
+    " a": {
+      "ids": [
+        264
+      ],
+      "tokens": [
+        "Ġa"
+      ],
+      "single_token": true
+    }
+  },
+  "single_token_letters": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "multi_token_letters": [],
+  "chat_template": {
+    "enable_thinking=False": {
+      "direct_kwarg": {
+        "ok": true,
+        "tail": "<|im_start|>user\n请判断该交易应如何处理。\n状态：用户近30天首次登录，设备与历史一致，金额128元，商户为常用商户。\nA. 通过\nB. 人工复核\nC. 拒绝\n只回答一个字母。<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+        "has_empty_think": true,
+        "ends_with_open_think": false
+      }
+    },
+    "enable_thinking=True": {
+      "direct_kwarg": {
+        "ok": true,
+        "tail": "<|im_start|>user\n请判断该交易应如何处理。\n状态：用户近30天首次登录，设备与历史一致，金额128元，商户为常用商户。\nA. 通过\nB. 人工复核\nC. 拒绝\n只回答一个字母。<|im_end|>\n<|im_start|>assistant\n<think>\n",
+        "has_empty_think": false,
+        "ends_with_open_think": true
+      }
+    }
+  },
+  "auto_model_causal_lm_mapping": "_LazyAutoMapping()"
+}

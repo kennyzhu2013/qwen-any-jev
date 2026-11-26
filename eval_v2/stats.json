@@ -1,0 +1,261 @@
+{
+  "source": "assets/复核数据_v2.csv",
+  "source_sha256": "89f6f902483e90a259370c53ed3d4cde3ab084a6453f653cd61062c0eb731ab9",
+  "n_rows": 9381,
+  "labels": {
+    "涉诈": 919,
+    "非涉诈": 8462
+  },
+  "is_violation": {
+    "1": 7633,
+    "0": 1748
+  },
+  "is_fraud": {
+    "1": 919,
+    "0": 8462
+  },
+  "risk_level": {
+    "高风险": 1285,
+    "低风险": 6291,
+    "合规": 1748,
+    "中风险": 57
+  },
+  "scene_category": {
+    "引导贷款用户添加第三方微信": 196,
+    "贷款相关-ab贷": 328,
+    "贷款相关": 6366,
+    "证券投资类": 148,
+    "个体工商户年报补录收费": 234,
+    "违规催收": 198,
+    "其他": 5,
+    "引流第三方平台": 84,
+    "企业营销与招商服务": 14,
+    "网贷平台退息退费": 11,
+    "手机租赁套路贷": 1,
+    "法律服务": 19,
+    "商业地产": 24,
+    "套路运": 1,
+    "商品推销": 4
+  },
+  "old_label": {
+    "涉诈": 1287,
+    "正常": 1741,
+    "": 6353
+  },
+  "label_source": {
+    "old_category": 864,
+    "rule:loan_low": 74,
+    "spec_review": 242,
+    "old_label": 145,
+    "rule:loan_cut_interest": 20,
+    "rule:loan_platform_guide": 30,
+    "rule:loan_debt_opt": 28,
+    "rule:collection_impersonate": 37,
+    "manual_note": 16,
+    "rule:collection_low": 29,
+    "rule:collection_refinance": 7,
+    "rule:loan_medium": 2,
+    "default_category": 1,
+    "rule:traffic_high_channel": 8,
+    "rule:loan_user_adds_wechat": 23,
+    "rule:loan_withdraw": 10,
+    "rule:enterprise_medium_tax": 1,
+    "rule:traffic_user_adds": 5,
+    "rule:legal_low_fee": 7,
+    "rule:estate_medium_renovation": 1,
+    "rule:loan_high_channel": 3,
+    "rule:enterprise_low": 1,
+    "human_1022": 6246,
+    "human_cq_normal": 1581
+  },
+  "needs_review": {
+    "0": 9381
+  },
+  "cohort": {
+    "human_0729": 1447,
+    "agent_1022": 6353,
+    "human_cq_normal": 1581
+  },
+  "by_cohort": {
+    "human_0729": {
+      "n": 1447,
+      "fraud": 869,
+      "violation": 1293,
+      "compliant": 154,
+      "review": 0,
+      "risk": {
+        "高风险": 1109,
+        "低风险": 175,
+        "合规": 154,
+        "中风险": 9
+      },
+      "label": {
+        "涉诈": 869,
+        "非涉诈": 578
+      },
+      "label_source": {
+        "old_category": 864,
+        "rule:loan_low": 74,
+        "spec_review": 135,
+        "old_label": 145,
+        "rule:loan_cut_interest": 20,
+        "rule:loan_platform_guide": 30,
+        "rule:loan_debt_opt": 28,
+        "rule:collection_impersonate": 37,
+        "manual_note": 16,
+        "rule:collection_low": 29,
+        "rule:collection_refinance": 7,
+        "rule:loan_medium": 2,
+        "default_category": 1,
+        "rule:traffic_high_channel": 8,
+        "rule:loan_user_adds_wechat": 23,
+        "rule:loan_withdraw": 10,
+        "rule:enterprise_medium_tax": 1,
+        "rule:traffic_user_adds": 5,
+        "rule:legal_low_fee": 7,
+        "rule:estate_medium_renovation": 1,
+        "rule:loan_high_channel": 3,
+        "rule:enterprise_low": 1
+      }
+    },
+    "agent_1022": {
+      "n": 6353,
+      "fraud": 50,
+      "violation": 6340,
+      "compliant": 13,
+      "review": 0,
+      "risk": {
+        "低风险": 6116,
+        "高风险": 176,
+        "合规": 13,
+        "中风险": 48
+      },
+      "label": {
+        "非涉诈": 6303,
+        "涉诈": 50
+      },
+      "label_source": {
+        "human_1022": 6246,
+        "spec_review": 107
+      }
+    },
+    "human_cq_normal": {
+      "n": 1581,
+      "fraud": 0,
+      "violation": 0,
+      "compliant": 1581,
+      "review": 0,
+      "risk": {
+        "合规": 1581
+      },
+      "label": {
+        "非涉诈": 1581
+      },
+      "label_source": {
+        "human_cq_normal": 1581
+      }
+    }
+  },
+  "normal_audit": 0,
+  "normal_audit_fraud": 0,
+  "normal_audit_high": 0,
+  "normal_audit_low": 0,
+  "old_to_new": {
+    "涉诈->fraud": 867,
+    "涉诈->violation": 416,
+    "正常->fraud": 2,
+    "正常->compliant": 1731,
+    "正常->violation": 8,
+    "涉诈->compliant": 4
+  },
+  "scene_goldens": 6714,
+  "fraud_type_goldens": 919,
+  "by_split": {
+    "cal": {
+      "n": 3755,
+      "fraud": 366,
+      "violation": 3054,
+      "review": 0,
+      "risk": {
+        "低风险": 2532,
+        "高风险": 499,
+        "合规": 701,
+        "中风险": 23
+      },
+      "label": {
+        "非涉诈": 3389,
+        "涉诈": 366
+      },
+      "cohort": {
+        "human_0729": 580,
+        "agent_1022": 2542,
+        "human_cq_normal": 633
+      }
+    },
+    "dev": {
+      "n": 1876,
+      "fraud": 186,
+      "violation": 1529,
+      "review": 0,
+      "risk": {
+        "低风险": 1265,
+        "高风险": 252,
+        "中风险": 12,
+        "合规": 347
+      },
+      "label": {
+        "非涉诈": 1690,
+        "涉诈": 186
+      },
+      "cohort": {
+        "human_0729": 289,
+        "agent_1022": 1271,
+        "human_cq_normal": 316
+      }
+    },
+    "gate": {
+      "n": 3750,
+      "fraud": 367,
+      "violation": 3050,
+      "review": 0,
+      "risk": {
+        "高风险": 534,
+        "低风险": 2494,
+        "中风险": 22,
+        "合规": 700
+      },
+      "label": {
+        "涉诈": 367,
+        "非涉诈": 3383
+      },
+      "cohort": {
+        "human_0729": 578,
+        "agent_1022": 2540,
+        "human_cq_normal": 632
+      }
+    }
+  },
+  "clusters": {
+    "n_clusters": 8586,
+    "multi_row_clusters": 91,
+    "largest_cluster": 643,
+    "normal_only_clusters": 1580,
+    "group_ids": 1580,
+    "bridged_clusters_skipped": 0,
+    "normal_split_sizes": {
+      "cal": 633,
+      "dev": 316,
+      "gate": 632
+    },
+    "split_sizes": {
+      "cal": 3175,
+      "dev": 1587,
+      "gate": 3172
+    },
+    "frozen_cross_split_clusters": 0
+  },
+  "split_sources": [
+    "eval/splits.json",
+    "runs/labels_v2/extra_splits.json"
+  ]
+}

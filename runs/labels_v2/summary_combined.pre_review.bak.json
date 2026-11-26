@@ -1,0 +1,259 @@
+{
+  "source_old": "assets/0729复核人工确认数据_v2.csv",
+  "source_new": "assets/10.22 复核结果.xlsx",
+  "n_old": 1447,
+  "n_new": 6353,
+  "n_rows": 7800,
+  "cohorts": {
+    "human_0729": 1447,
+    "agent_1022": 6353
+  },
+  "label_v2": {
+    "涉诈": 866,
+    "非涉诈": 6934
+  },
+  "is_violation": {
+    "1": 4829,
+    "0": 2971
+  },
+  "is_fraud": {
+    "1": 866,
+    "0": 6934
+  },
+  "risk_level": {
+    "高风险": 1087,
+    "低风险": 3684,
+    "合规": 2971,
+    "中风险": 58
+  },
+  "scene_category": {
+    "引导贷款用户添加第三方微信": 191,
+    "贷款相关-ab贷": 288,
+    "贷款相关": 3738,
+    "违规催收": 155,
+    "正常": 2971,
+    "个体工商户年报补录收费": 227,
+    "证券投资类": 147,
+    "企业营销与招商服务": 15,
+    "其他": 5,
+    "引流第三方平台": 14,
+    "网贷平台退息退费": 11,
+    "手机租赁套路贷": 1,
+    "法律服务": 18,
+    "商业地产": 15,
+    "套路运": 1,
+    "商品推销": 3
+  },
+  "label_source": {
+    "old_category": 864,
+    "rule:loan_low": 74,
+    "default_low": 77,
+    "normal_audit": 15,
+    "old_label": 145,
+    "rule:collection_legal_process": 30,
+    "rule:loan_cut_interest": 20,
+    "rule:loan_platform_guide": 30,
+    "rule:loan_debt_opt": 28,
+    "rule:collection_impersonate": 50,
+    "manual_note": 16,
+    "rule:collection_low": 29,
+    "rule:collection_refinance": 7,
+    "rule:loan_medium": 2,
+    "default_category": 1,
+    "rule:traffic_high_channel": 8,
+    "rule:loan_user_adds_wechat": 23,
+    "rule:loan_withdraw": 10,
+    "rule:enterprise_medium_tax": 1,
+    "rule:traffic_user_adds": 5,
+    "rule:legal_low_fee": 7,
+    "rule:estate_medium_renovation": 1,
+    "rule:loan_high_channel": 3,
+    "rule:enterprise_low": 1,
+    "cq_agent:llm-fast": 5524,
+    "cq_agent:llm-escalated": 824,
+    "cq_agent:llm-escalated+heuristic": 1,
+    "cq_agent:heuristic": 4
+  },
+  "needs_review": {
+    "0": 7558,
+    "1": 242
+  },
+  "by_cohort": {
+    "human_0729": {
+      "n": 1447,
+      "label_v2": {
+        "涉诈": 864,
+        "非涉诈": 583
+      },
+      "is_violation": {
+        "1": 1287,
+        "0": 160
+      },
+      "is_fraud": {
+        "1": 864,
+        "0": 583
+      },
+      "risk_level": {
+        "高风险": 1085,
+        "低风险": 198,
+        "合规": 160,
+        "中风险": 4
+      },
+      "scene_category": {
+        "引导贷款用户添加第三方微信": 189,
+        "贷款相关-ab贷": 288,
+        "贷款相关": 257,
+        "违规催收": 135,
+        "正常": 160,
+        "个体工商户年报补录收费": 227,
+        "证券投资类": 147,
+        "企业营销与招商服务": 7,
+        "其他": 1,
+        "引流第三方平台": 13,
+        "网贷平台退息退费": 11,
+        "手机租赁套路贷": 1,
+        "法律服务": 7,
+        "商业地产": 3,
+        "套路运": 1
+      },
+      "label_source": {
+        "old_category": 864,
+        "rule:loan_low": 74,
+        "default_low": 77,
+        "normal_audit": 15,
+        "old_label": 145,
+        "rule:collection_legal_process": 30,
+        "rule:loan_cut_interest": 20,
+        "rule:loan_platform_guide": 30,
+        "rule:loan_debt_opt": 28,
+        "rule:collection_impersonate": 50,
+        "manual_note": 16,
+        "rule:collection_low": 29,
+        "rule:collection_refinance": 7,
+        "rule:loan_medium": 2,
+        "default_category": 1,
+        "rule:traffic_high_channel": 8,
+        "rule:loan_user_adds_wechat": 23,
+        "rule:loan_withdraw": 10,
+        "rule:enterprise_medium_tax": 1,
+        "rule:traffic_user_adds": 5,
+        "rule:legal_low_fee": 7,
+        "rule:estate_medium_renovation": 1,
+        "rule:loan_high_channel": 3,
+        "rule:enterprise_low": 1
+      },
+      "needs_review": {
+        "0": 1312,
+        "1": 135
+      }
+    },
+    "agent_1022": {
+      "n": 6353,
+      "label_v2": {
+        "非涉诈": 6351,
+        "涉诈": 2
+      },
+      "is_violation": {
+        "1": 3542,
+        "0": 2811
+      },
+      "is_fraud": {
+        "0": 6351,
+        "1": 2
+      },
+      "risk_level": {
+        "低风险": 3486,
+        "合规": 2811,
+        "中风险": 54,
+        "高风险": 2
+      },
+      "scene_category": {
+        "贷款相关": 3481,
+        "正常": 2811,
+        "商业地产": 12,
+        "法律服务": 11,
+        "违规催收": 20,
+        "引导贷款用户添加第三方微信": 2,
+        "引流第三方平台": 1,
+        "企业营销与招商服务": 8,
+        "商品推销": 3,
+        "其他": 4
+      },
+      "label_source": {
+        "cq_agent:llm-fast": 5524,
+        "cq_agent:llm-escalated": 824,
+        "cq_agent:llm-escalated+heuristic": 1,
+        "cq_agent:heuristic": 4
+      },
+      "needs_review": {
+        "0": 6246,
+        "1": 107
+      }
+    }
+  },
+  "clusters": {
+    "n_clusters": 5559,
+    "multi_row_clusters": 90,
+    "largest_cluster": 643,
+    "mixed_risk_clusters": 13,
+    "mixed_risk_cluster_rows": 680,
+    "mixed_risk_rows": 46,
+    "old_new_clusters": 0,
+    "old_cross_split_clusters": 0,
+    "split_sizes": {
+      "cal": 2542,
+      "gate": 2540,
+      "dev": 1271
+    }
+  },
+  "by_split": {
+    "cal": {
+      "n": 3122,
+      "fraud": 346,
+      "violation": 1919,
+      "review": 115,
+      "cohort": {
+        "human_0729": 580,
+        "agent_1022": 2542
+      },
+      "risk_level": {
+        "低风险": 1463,
+        "高风险": 431,
+        "合规": 1203,
+        "中风险": 25
+      }
+    },
+    "dev": {
+      "n": 1560,
+      "fraud": 174,
+      "violation": 974,
+      "review": 36,
+      "cohort": {
+        "human_0729": 289,
+        "agent_1022": 1271
+      },
+      "risk_level": {
+        "低风险": 751,
+        "高风险": 212,
+        "合规": 586,
+        "中风险": 11
+      }
+    },
+    "gate": {
+      "n": 3118,
+      "fraud": 346,
+      "violation": 1936,
+      "review": 91,
+      "cohort": {
+        "human_0729": 578,
+        "agent_1022": 2540
+      },
+      "risk_level": {
+        "高风险": 444,
+        "合规": 1182,
+        "低风险": 1470,
+        "中风险": 22
+      }
+    }
+  }
+}

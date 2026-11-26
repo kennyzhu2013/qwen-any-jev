@@ -1,0 +1,15 @@
+﻿id,source_file,source_date,agent_res,agent_conf,probe_p,is_fraud,is_violation,risk_level,scene_category,scene_subtype,label_source,note
+2026110419091300356633,chongqing20261103-1113_match_result.csv,20261104,涉诈-高风险-贷款相关-ab贷,0.95,0.862755,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110519090376910959,chongqing20261103-1113_match_result.csv,20261105,涉诈-高风险-贷款相关-ab贷,0.95,0.891780,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110520231070191582,chongqing20261103-1113_match_result.csv,20261105,涉诈-高风险-贷款相关-ab贷,0.95,0.988814,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110811071249050422,chongqing20261103-1113_match_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.95,0.949130,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110815253677902621,chongqing20261103-1113_match_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.92,0.970651,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110816160203976045,chongqing20261103-1113_match_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.92,0.844367,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110816212369757625,chongqing20261103-1113_match_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.93,0.998619,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110816330935103203,chongqing20261103-1113_match_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.92,0.659366,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110817031669839625,chongqing20261103-1113_unmatch_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.72,0.148066,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110817450574380545,chongqing20261103-1113_match_result.csv,20261108,涉诈-高风险-贷款相关-ab贷,0.9,0.963630,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110910010897633282,chongqing20261103-1113_match_result.csv,20261109,涉诈-高风险-贷款相关-ab贷,0.95,0.656144,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026110919401280807402,chongqing20261103-1113_match_result.csv,20261109,涉诈-高风险-贷款相关-ab贷,0.9,0.503516,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026111117023776936096,chongqing20261103-1113_unmatch_result.csv,20261111,涉诈-高风险-贷款相关-ab贷,0.9,0.113810,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核
+2026111117173175369289,chongqing20261103-1113_match_result.csv,20261111,涉诈-高风险-贷款相关-ab贷,0.92,0.890611,1,1,高风险,贷款相关-ab贷,,user_confirmed_ab贷,用户确认；其中 2 条 probe P<0.5（conf 0.72 / 0.90），建议快速复核

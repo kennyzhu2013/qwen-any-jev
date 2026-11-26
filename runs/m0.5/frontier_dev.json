@@ -1,0 +1,215 @@
+{
+  "split": "dev",
+  "configs": {
+    "raw": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.9626731122542814,
+        "fraud_recall": 0.603112840466926,
+        "normal_recall": 0.75,
+        "balanced_accuracy": 0.6765564202334631,
+        "precision": 0.950920245398773
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.6224593382055109,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5547786964980546,
+          "precision": 0.9007352941176471
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.6224593382055109,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5547786964980546,
+          "precision": 0.9007352941176471
+        }
+      }
+    },
+    "l0-noprior": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.9740426424960901,
+        "fraud_recall": 0.5525291828793775,
+        "normal_recall": 0.78125,
+        "balanced_accuracy": 0.6668895914396887,
+        "precision": 0.9530201342281879
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.6076631698328917,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5547786964980546,
+          "precision": 0.9007352941176471
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.5621765008857981,
+          "fraud_recall": 0.9571984435797666,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5567242217898833,
+          "precision": 0.9010989010989011
+        }
+      }
+    },
+    "l0-batch": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.8751210780914368,
+        "fraud_recall": 0.5525291828793775,
+        "normal_recall": 0.78125,
+        "balanced_accuracy": 0.6668895914396887,
+        "precision": 0.9530201342281879
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.2243520317935919,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5547786964980546,
+          "precision": 0.9007352941176471
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.1934132475817653,
+          "fraud_recall": 0.9571984435797666,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5567242217898833,
+          "precision": 0.9010989010989011
+        }
+      }
+    },
+    "l0-cf": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.9774382802327405,
+        "fraud_recall": 0.5525291828793775,
+        "normal_recall": 0.78125,
+        "balanced_accuracy": 0.6668895914396887,
+        "precision": 0.9530201342281879
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.6413389957212658,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5547786964980546,
+          "precision": 0.9007352941176471
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.5971683915676724,
+          "fraud_recall": 0.9571984435797666,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5567242217898833,
+          "precision": 0.9010989010989011
+        }
+      }
+    },
+    "l0-adaptive": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.9740426424960901,
+        "fraud_recall": 0.5525291828793775,
+        "normal_recall": 0.78125,
+        "balanced_accuracy": 0.6668895914396887,
+        "precision": 0.9530201342281879
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.6076631698328917,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5547786964980546,
+          "precision": 0.9007352941176471
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.5621765008857981,
+          "fraud_recall": 0.9571984435797666,
+          "normal_recall": 0.15625,
+          "balanced_accuracy": 0.5567242217898833,
+          "precision": 0.9010989010989011
+        }
+      }
+    },
+    "probe": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.7324557304382324,
+        "fraud_recall": 0.642023346303502,
+        "normal_recall": 0.90625,
+        "balanced_accuracy": 0.7741366731517509,
+        "precision": 0.9821428571428571
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.2740756571292877,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.21875,
+          "balanced_accuracy": 0.5860286964980546,
+          "precision": 0.9074074074074074
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.2677249610424042,
+          "fraud_recall": 0.9610894941634242,
+          "normal_recall": 0.21875,
+          "balanced_accuracy": 0.5899197470817121,
+          "precision": 0.9080882352941176
+        }
+      }
+    },
+    "probe-riskfirst": {
+      "n": 289,
+      "support": {
+        "正常": 32,
+        "涉诈": 257
+      },
+      "max_balanced_accuracy": {
+        "threshold": 0.956666111946106,
+        "fraud_recall": 0.6536964980544747,
+        "normal_recall": 0.78125,
+        "balanced_accuracy": 0.7174732490272373,
+        "precision": 0.96
+      },
+      "fraud_recall_ge_0.95": {
+        "max_normal_recall": {
+          "threshold": 0.55428546667099,
+          "fraud_recall": 0.953307392996109,
+          "normal_recall": 0.28125,
+          "balanced_accuracy": 0.6172786964980546,
+          "precision": 0.914179104477612
+        },
+        "max_balanced_accuracy": {
+          "threshold": 0.5144332647323608,
+          "fraud_recall": 0.9610894941634242,
+          "normal_recall": 0.28125,
+          "balanced_accuracy": 0.6211697470817121,
+          "precision": 0.9148148148148149
+        }
+      }
+    }
+  }
+}

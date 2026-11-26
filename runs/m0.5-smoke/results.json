@@ -1,0 +1,2298 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": null,
+    "goldens": "/tmp/real_smoke.jsonl",
+    "n_rows": 40,
+    "synthetic": false,
+    "anyjev_version": "0.3.0",
+    "transformers_version": "5.22.1",
+    "torch_version": "2.6.0+cu124",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "batch_size": 8,
+    "timing_repeats": 1,
+    "backend": {
+      "model_class": "Qwen3_5ForCausalLM",
+      "config_class": "Qwen3_5TextConfig",
+      "n_layers": 32,
+      "hidden_size": 2560,
+      "tokenizer_class": "Qwen3_5Tokenizer",
+      "shared_fallbacks": 0,
+      "param_dtype": "torch.bfloat16"
+    },
+    "question": "请判断该通话对应的业务是否需要按涉诈风险处置：",
+    "options": [
+      "正常",
+      "涉诈"
+    ],
+    "prior": "batch",
+    "max_perms": null,
+    "canonical_order": true,
+    "notes": [
+      "Samples are synthetic smoke-test rows, not the Phase 0 goldens; metrics are not a quality claim.",
+      "AnyJev 0.3.0 implements raw and L0 only; L1 here is post-hoc temperature scaling fit in-sample.",
+      "L0 uses a batch prior estimated from the same rows; no labels are used in the prior, but the eval batch's class composition does enter the correction.",
+      "L0-noprior isolates permutation marginalization from prior correction; L0-cf uses content-free probes and costs extra forward passes.",
+      "Timing is the median of --timing-repeats runs (fresh Decider each run) after a one-row warmup; it excludes model load and is not a serving benchmark.",
+      "A 12-row run cannot support a promotion decision; it validates the API and pipeline."
+    ]
+  },
+  "results": {
+    "raw": {
+      "config": "raw",
+      "elapsed_s": 4.593563621863723,
+      "timing_runs_s": [
+        4.593563621863723
+      ],
+      "per_row_s": 0.11483909054659307,
+      "decider_stats": {
+        "backend_calls": 1,
+        "flat_prompts": 40,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 0,
+        "adaptive_shifts_total": 0
+      },
+      "rows": [
+        {
+          "id": "smoke-000",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9149009532527358,
+          "probs": [
+            0.08509904674726423,
+            0.9149009532527358
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992271240663976
+          }
+        },
+        {
+          "id": "smoke-001",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.999290329692456,
+          "probs": [
+            0.0007096703075439079,
+            0.999290329692456
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9998527089852471
+          }
+        },
+        {
+          "id": "smoke-002",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9149009515124917,
+          "probs": [
+            0.08509904848750824,
+            0.9149009515124917
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994331975583355
+          }
+        },
+        {
+          "id": "smoke-003",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9968273178938688,
+          "probs": [
+            0.00317268210613114,
+            0.9968273178938688
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999763355678149
+          }
+        },
+        {
+          "id": "smoke-004",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.754914997895581,
+          "probs": [
+            0.754914997895581,
+            0.24508500210441886
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991893074122405
+          }
+        },
+        {
+          "id": "smoke-005",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.970687768612669,
+          "probs": [
+            0.029312231387330967,
+            0.970687768612669
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999524755756216
+          }
+        },
+        {
+          "id": "smoke-006",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.6224593312018546,
+          "probs": [
+            0.6224593312018546,
+            0.37754066879814546
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9983019339790307
+          }
+        },
+        {
+          "id": "smoke-007",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.7981867777396212,
+          "probs": [
+            0.7981867777396212,
+            0.20181322226037882
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999441704791909
+          }
+        },
+        {
+          "id": "smoke-008",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9740426419074109,
+          "probs": [
+            0.025957358092589023,
+            0.9740426419074109
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995878280789102
+          }
+        },
+        {
+          "id": "smoke-009",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9890130562258507,
+          "probs": [
+            0.010986943774149287,
+            0.9890130562258507
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996379468010017
+          }
+        },
+        {
+          "id": "smoke-010",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9914225145387687,
+          "probs": [
+            0.008577485461231297,
+            0.9914225145387687
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996252143654141
+          }
+        },
+        {
+          "id": "smoke-011",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9046505344582186,
+          "probs": [
+            0.09534946554178125,
+            0.9046505344582186
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9992761235362672
+          }
+        },
+        {
+          "id": "smoke-012",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9902915222560201,
+          "probs": [
+            0.009708477743979965,
+            0.9902915222560201
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996607190511059
+          }
+        },
+        {
+          "id": "smoke-013",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.6791786926816161,
+          "probs": [
+            0.6791786926816161,
+            0.3208213073183839
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9988438675019757
+          }
+        },
+        {
+          "id": "smoke-014",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9940889309932606,
+          "probs": [
+            0.0059110690067395,
+            0.9940889309932606
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997435610231802
+          }
+        },
+        {
+          "id": "smoke-015",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9796676455071812,
+          "probs": [
+            0.020332354492818717,
+            0.9796676455071812
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996726428602549
+          }
+        },
+        {
+          "id": "smoke-016",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8807970795424088,
+          "probs": [
+            0.11920292045759123,
+            0.8807970795424088
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9991989293029038
+          }
+        },
+        {
+          "id": "smoke-017",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9324533135530545,
+          "probs": [
+            0.06754668644694549,
+            0.9324533135530545
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994458240518155
+          }
+        },
+        {
+          "id": "smoke-018",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9046505402422645,
+          "probs": [
+            0.09534945975773548,
+            0.9046505402422645
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999447259429919
+          }
+        },
+        {
+          "id": "smoke-019",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9924227577236518,
+          "probs": [
+            0.9924227577236518,
+            0.0075772422763482235
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997601114868482
+          }
+        },
+        {
+          "id": "smoke-020",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9399133550857522,
+          "probs": [
+            0.9399133550857522,
+            0.06008664491424771
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995860178689447
+          }
+        },
+        {
+          "id": "smoke-021",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.993307148137705,
+          "probs": [
+            0.006692851862294937,
+            0.993307148137705
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995508309427146
+          }
+        },
+        {
+          "id": "smoke-022",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8519528000888387,
+          "probs": [
+            0.14804719991116141,
+            0.8519528000888387
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994134816032771
+          }
+        },
+        {
+          "id": "smoke-023",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9740426411539017,
+          "probs": [
+            0.025957358846098247,
+            0.9740426411539017
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995932804441344
+          }
+        },
+        {
+          "id": "smoke-024",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7549149868676283,
+          "probs": [
+            0.24508501313237174,
+            0.7549149868676283
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9983880748665652
+          }
+        },
+        {
+          "id": "smoke-025",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9525741286736912,
+          "probs": [
+            0.047425871326308926,
+            0.9525741286736912
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995297791053475
+          }
+        },
+        {
+          "id": "smoke-026",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6224593382055109,
+          "probs": [
+            0.3775406617944891,
+            0.6224593382055109
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995684527238347
+          }
+        },
+        {
+          "id": "smoke-027",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9046505280315009,
+          "probs": [
+            0.09534947196849917,
+            0.9046505280315009
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993003575685302
+          }
+        },
+        {
+          "id": "smoke-028",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9959298616347724,
+          "probs": [
+            0.004070138365227625,
+            0.9959298616347724
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.999778667577191
+          }
+        },
+        {
+          "id": "smoke-029",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8670357683915537,
+          "probs": [
+            0.13296423160844623,
+            0.8670357683915537
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995120371043219
+          }
+        },
+        {
+          "id": "smoke-030",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9820137894128208,
+          "probs": [
+            0.01798621058717929,
+            0.9820137894128208
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996033905661011
+          }
+        },
+        {
+          "id": "smoke-031",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9820137908932917,
+          "probs": [
+            0.017986209106708374,
+            0.9820137908932917
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996754492960894
+          }
+        },
+        {
+          "id": "smoke-032",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6513548646660542,
+          "probs": [
+            0.34864513533394575,
+            0.6513548646660542
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9990508223292371
+          }
+        },
+        {
+          "id": "smoke-033",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.8354835391516132,
+          "probs": [
+            0.8354835391516132,
+            0.1645164608483867
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997522411699524
+          }
+        },
+        {
+          "id": "smoke-034",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.731058584489497,
+          "probs": [
+            0.26894141551050293,
+            0.731058584489497
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995282428895902
+          }
+        },
+        {
+          "id": "smoke-035",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.5926665999540697,
+          "probs": [
+            0.4073334000459302,
+            0.5926665999540697
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9997390251474872
+          }
+        },
+        {
+          "id": "smoke-036",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.5312093733737563,
+          "probs": [
+            0.46879062662624377,
+            0.5312093733737563
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9994520650126337
+          }
+        },
+        {
+          "id": "smoke-037",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.904650538956921,
+          "probs": [
+            0.09534946104307897,
+            0.904650538956921
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9993171498363638
+          }
+        },
+        {
+          "id": "smoke-038",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7310585727705126,
+          "probs": [
+            0.2689414272294874,
+            0.7310585727705126
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9996041027081743
+          }
+        },
+        {
+          "id": "smoke-039",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9706877674467155,
+          "probs": [
+            0.02931223255328453,
+            0.9706877674467155
+          ],
+          "level": "raw",
+          "diagnostics": {
+            "permutations": 1,
+            "answer_mass": 0.9995299587276156
+          }
+        }
+      ],
+      "metrics": {
+        "n": 40,
+        "accuracy": 0.65,
+        "macro_tpr": 0.5733333333333334,
+        "ece_10bin": 0.40037253487814217,
+        "brier": 0.7081677827533237,
+        "nll": 1.5326007397270842,
+        "mean_confidence": 0.8738456408704274,
+        "answers": {
+          "正常": 7,
+          "涉诈": 33
+        },
+        "per_class": {
+          "正常": {
+            "support": 15,
+            "predicted": 7,
+            "tpr": 0.26666666666666666,
+            "tnr": 0.88
+          },
+          "涉诈": {
+            "support": 25,
+            "predicted": 33,
+            "tpr": 0.88,
+            "tnr": 0.26666666666666666
+          }
+        }
+      }
+    },
+    "L0": {
+      "config": "L0",
+      "elapsed_s": 7.432156529277563,
+      "timing_runs_s": [
+        7.432156529277563
+      ],
+      "per_row_s": 0.18580391323193907,
+      "decider_stats": {
+        "backend_calls": 1,
+        "flat_prompts": 80,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 0,
+        "adaptive_shifts_total": 0
+      },
+      "rows": [
+        {
+          "id": "smoke-000",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9071740772948194,
+          "probs": [
+            0.09282592270518061,
+            0.9071740772948194
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993268365883694
+          }
+        },
+        {
+          "id": "smoke-001",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9990585134838977,
+          "probs": [
+            0.0009414865161023052,
+            0.9990585134838977
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9997946616689097
+          }
+        },
+        {
+          "id": "smoke-002",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9017753651446069,
+          "probs": [
+            0.09822463485539314,
+            0.9017753651446069
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9994184394282513
+          }
+        },
+        {
+          "id": "smoke-003",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9905720921882117,
+          "probs": [
+            0.00942790781178821,
+            0.9905720921882117
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9997589070491872
+          }
+        },
+        {
+          "id": "smoke-004",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.8635851225328337,
+          "probs": [
+            0.8635851225328337,
+            0.13641487746716635
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993472351431621
+          }
+        },
+        {
+          "id": "smoke-005",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.95389394712836,
+          "probs": [
+            0.04610605287164008,
+            0.95389394712836
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995506729278694
+          }
+        },
+        {
+          "id": "smoke-006",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.831373315960001,
+          "probs": [
+            0.831373315960001,
+            0.16862668403999898
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9986236417580098
+          }
+        },
+        {
+          "id": "smoke-007",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.9344957236295771,
+          "probs": [
+            0.9344957236295771,
+            0.06550427637042291
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9994841672457973
+          }
+        },
+        {
+          "id": "smoke-008",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9415638983592141,
+          "probs": [
+            0.05843610164078592,
+            0.9415638983592141
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995680836496692
+          }
+        },
+        {
+          "id": "smoke-009",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.981423531361682,
+          "probs": [
+            0.018576468638318015,
+            0.981423531361682
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996436823670023
+          }
+        },
+        {
+          "id": "smoke-010",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9790020398351328,
+          "probs": [
+            0.020997960164867203,
+            0.9790020398351328
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996070433672762
+          }
+        },
+        {
+          "id": "smoke-011",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.7118955958675146,
+          "probs": [
+            0.2881044041324854,
+            0.7118955958675146
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993903975369753
+          }
+        },
+        {
+          "id": "smoke-012",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9835704582145097,
+          "probs": [
+            0.016429541785490265,
+            0.9835704582145097
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995981682336901
+          }
+        },
+        {
+          "id": "smoke-013",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.8481792738340034,
+          "probs": [
+            0.8481792738340034,
+            0.15182072616599662
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9990873943851465
+          }
+        },
+        {
+          "id": "smoke-014",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9790020371117221,
+          "probs": [
+            0.020997962888277884,
+            0.9790020371117221
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995730815737494
+          }
+        },
+        {
+          "id": "smoke-015",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9510658805199824,
+          "probs": [
+            0.048934119480017635,
+            0.9510658805199824
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996527653073749
+          }
+        },
+        {
+          "id": "smoke-016",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6855956946210239,
+          "probs": [
+            0.3144043053789761,
+            0.6855956946210239
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9992640434506779
+          }
+        },
+        {
+          "id": "smoke-017",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8219490079907058,
+          "probs": [
+            0.17805099200929422,
+            0.8219490079907058
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9994618456082901
+          }
+        },
+        {
+          "id": "smoke-018",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7487785370506146,
+          "probs": [
+            0.25122146294938535,
+            0.7487785370506146
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995577104761637
+          }
+        },
+        {
+          "id": "smoke-019",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9949479264193127,
+          "probs": [
+            0.9949479264193127,
+            0.005052073580687282
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9997338208455977
+          }
+        },
+        {
+          "id": "smoke-020",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9814832939614347,
+          "probs": [
+            0.9814832939614347,
+            0.018516706038565346
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996273008551182
+          }
+        },
+        {
+          "id": "smoke-021",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9871579900482779,
+          "probs": [
+            0.012842009951722048,
+            0.9871579900482779
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995947171956497
+          }
+        },
+        {
+          "id": "smoke-022",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6855957042570492,
+          "probs": [
+            0.31440429574295087,
+            0.6855957042570492
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995217962954004
+          }
+        },
+        {
+          "id": "smoke-023",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8838708810031952,
+          "probs": [
+            0.11612911899680477,
+            0.8838708810031952
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9993298623241906
+          }
+        },
+        {
+          "id": "smoke-024",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5238298400512451,
+          "probs": [
+            0.5238298400512451,
+            0.47617015994875495
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.998257873181629
+          }
+        },
+        {
+          "id": "smoke-025",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8556485093613327,
+          "probs": [
+            0.14435149063866723,
+            0.8556485093613327
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995119103884613
+          }
+        },
+        {
+          "id": "smoke-026",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.6863029914583127,
+          "probs": [
+            0.6863029914583127,
+            0.3136970085416872
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996192623966341
+          }
+        },
+        {
+          "id": "smoke-027",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8309125313600492,
+          "probs": [
+            0.16908746863995078,
+            0.8309125313600492
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9988381844926768
+          }
+        },
+        {
+          "id": "smoke-028",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9911382386702674,
+          "probs": [
+            0.008861761329732706,
+            0.9911382386702674
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996638148448582
+          }
+        },
+        {
+          "id": "smoke-029",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6293917711583943,
+          "probs": [
+            0.3706082288416058,
+            0.6293917711583943
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995550153039912
+          }
+        },
+        {
+          "id": "smoke-030",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9449093190331699,
+          "probs": [
+            0.05509068096683011,
+            0.9449093190331699
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995774266943667
+          }
+        },
+        {
+          "id": "smoke-031",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9762725315048566,
+          "probs": [
+            0.023727468495143532,
+            0.9762725315048566
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996868545427307
+          }
+        },
+        {
+          "id": "smoke-032",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.6863029914583127,
+          "probs": [
+            0.6863029914583127,
+            0.3136970085416872
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9992682910462045
+          }
+        },
+        {
+          "id": "smoke-033",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9540381384012686,
+          "probs": [
+            0.9540381384012686,
+            0.045961861598731404
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9997495330680912
+          }
+        },
+        {
+          "id": "smoke-034",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.523010815180148,
+          "probs": [
+            0.4769891848198519,
+            0.523010815180148
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996177820102969
+          }
+        },
+        {
+          "id": "smoke-035",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.7251975539678414,
+          "probs": [
+            0.7251975539678414,
+            0.2748024460321587
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9997737005326881
+          }
+        },
+        {
+          "id": "smoke-036",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.6863029914583127,
+          "probs": [
+            0.6863029914583127,
+            0.3136970085416872
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9995716700840661
+          }
+        },
+        {
+          "id": "smoke-037",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8477559987298315,
+          "probs": [
+            0.1522440012701684,
+            0.8477559987298315
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9992243152869638
+          }
+        },
+        {
+          "id": "smoke-038",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5238298437680736,
+          "probs": [
+            0.5238298437680736,
+            0.4761701562319264
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.9996694783140505
+          }
+        },
+        {
+          "id": "smoke-039",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9614730394547485,
+          "probs": [
+            0.03852696054525154,
+            0.9614730394547485
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "batch",
+            "prior_strength": 0.75,
+            "answer_mass": 0.999560803765555
+          }
+        }
+      ],
+      "metrics": {
+        "n": 40,
+        "accuracy": 0.5,
+        "macro_tpr": 0.45333333333333337,
+        "ece_10bin": 0.4081694432822486,
+        "brier": 0.7971500721512592,
+        "nll": 1.5414868457688975,
+        "mean_confidence": 0.8473331753208463,
+        "answers": {
+          "正常": 13,
+          "涉诈": 27
+        },
+        "per_class": {
+          "正常": {
+            "support": 15,
+            "predicted": 13,
+            "tpr": 0.26666666666666666,
+            "tnr": 0.64
+          },
+          "涉诈": {
+            "support": 25,
+            "predicted": 27,
+            "tpr": 0.64,
+            "tnr": 0.26666666666666666
+          }
+        }
+      }
+    },
+    "L0-noprior": {
+      "config": "L0-noprior",
+      "elapsed_s": 7.45412608422339,
+      "timing_runs_s": [
+        7.45412608422339
+      ],
+      "per_row_s": 0.18635315210558473,
+      "decider_stats": {
+        "backend_calls": 1,
+        "flat_prompts": 80,
+        "shared_groups": 0,
+        "shared_prompts": 0,
+        "adaptive_items": 0,
+        "adaptive_shifts_total": 0
+      },
+      "rows": [
+        {
+          "id": "smoke-000",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9553191317547544,
+          "probs": [
+            0.04468086824524576,
+            0.9553191317547544
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9993268365883694
+          }
+        },
+        {
+          "id": "smoke-001",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9995694430182277,
+          "probs": [
+            0.0004305569817722302,
+            0.9995694430182277
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9997946616689097
+          }
+        },
+        {
+          "id": "smoke-002",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9525741281688026,
+          "probs": [
+            0.047425871831197446,
+            0.9525741281688026
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9994184394282513
+          }
+        },
+        {
+          "id": "smoke-003",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9956684982806774,
+          "probs": [
+            0.004331501719322584,
+            0.9956684982806774
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9997589070491872
+          }
+        },
+        {
+          "id": "smoke-004",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.7431680143008301,
+          "probs": [
+            0.7431680143008301,
+            0.2568319856991699
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9993472351431621
+          }
+        },
+        {
+          "id": "smoke-005",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9783846648738668,
+          "probs": [
+            0.02161533512613327,
+            0.9783846648738668
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995506729278694
+          }
+        },
+        {
+          "id": "smoke-006",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.692641983134736,
+          "probs": [
+            0.692641983134736,
+            0.30735801686526387
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9986236417580098
+          }
+        },
+        {
+          "id": "smoke-007",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.8670357589432324,
+          "probs": [
+            0.8670357589432324,
+            0.1329642410567676
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9994841672457973
+          }
+        },
+        {
+          "id": "smoke-008",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9724147168738542,
+          "probs": [
+            0.027585283126145905,
+            0.9724147168738542
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995680836496692
+          }
+        },
+        {
+          "id": "smoke-009",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9914225152456184,
+          "probs": [
+            0.008577484754381552,
+            0.9914225152456184
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996436823670023
+          }
+        },
+        {
+          "id": "smoke-010",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9902915240736703,
+          "probs": [
+            0.00970847592632968,
+            0.9902915240736703
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996070433672762
+          }
+        },
+        {
+          "id": "smoke-011",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.8438950981377437,
+          "probs": [
+            0.15610490186225634,
+            0.8438950981377437
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9993903975369753
+          }
+        },
+        {
+          "id": "smoke-012",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.9924227576973891,
+          "probs": [
+            0.007577242302610917,
+            0.9924227576973891
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995981682336901
+          }
+        },
+        {
+          "id": "smoke-013",
+          "label": "正常",
+          "answer": "正常",
+          "confidence": 0.7185943925708561,
+          "probs": [
+            0.7185943925708561,
+            0.28140560742914383
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9990873943851465
+          }
+        },
+        {
+          "id": "smoke-014",
+          "label": "正常",
+          "answer": "涉诈",
+          "confidence": 0.990291522799972,
+          "probs": [
+            0.009708477200027935,
+            0.990291522799972
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995730815737494
+          }
+        },
+        {
+          "id": "smoke-015",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9770226316998627,
+          "probs": [
+            0.022977368300137184,
+            0.9770226316998627
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996527653073749
+          }
+        },
+        {
+          "id": "smoke-016",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8267117887338447,
+          "probs": [
+            0.1732882112661553,
+            0.8267117887338447
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9992640434506779
+          }
+        },
+        {
+          "id": "smoke-017",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9099070066488189,
+          "probs": [
+            0.09009299335118125,
+            0.9099070066488189
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9994618456082901
+          }
+        },
+        {
+          "id": "smoke-018",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8670357619495165,
+          "probs": [
+            0.13296423805048346,
+            0.8670357619495165
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995577104761637
+          }
+        },
+        {
+          "id": "smoke-019",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9890130573896467,
+          "probs": [
+            0.9890130573896467,
+            0.01098694261035325
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9997338208455977
+          }
+        },
+        {
+          "id": "smoke-020",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9603611612535622,
+          "probs": [
+            0.9603611612535622,
+            0.03963883874643786
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996273008551182
+          }
+        },
+        {
+          "id": "smoke-021",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9940889305732407,
+          "probs": [
+            0.005911069426759326,
+            0.9940889305732407
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995947171956497
+          }
+        },
+        {
+          "id": "smoke-022",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.8267117951380392,
+          "probs": [
+            0.17328820486196084,
+            0.8267117951380392
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995217962954004
+          }
+        },
+        {
+          "id": "smoke-023",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9433475721536233,
+          "probs": [
+            0.056652427846376786,
+            0.9433475721536233
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9993298623241906
+          }
+        },
+        {
+          "id": "smoke-024",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.665410558746814,
+          "probs": [
+            0.33458944125318607,
+            0.665410558746814
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.998257873181629
+          }
+        },
+        {
+          "id": "smoke-025",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9284088051361358,
+          "probs": [
+            0.07159119486386434,
+            0.9284088051361358
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995119103884613
+          }
+        },
+        {
+          "id": "smoke-026",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5,
+          "probs": [
+            0.5,
+            0.5
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996192623966341
+          }
+        },
+        {
+          "id": "smoke-027",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9149009561531425,
+          "probs": [
+            0.08509904384685756,
+            0.9149009561531425
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9988381844926768
+          }
+        },
+        {
+          "id": "smoke-028",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9959298627210812,
+          "probs": [
+            0.0040701372789187385,
+            0.9959298627210812
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996638148448582
+          }
+        },
+        {
+          "id": "smoke-029",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.7879311993777729,
+          "probs": [
+            0.21206880062222705,
+            0.7879311993777729
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995550153039912
+          }
+        },
+        {
+          "id": "smoke-030",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9740426433437879,
+          "probs": [
+            0.02595735665621214,
+            0.9740426433437879
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995774266943667
+          }
+        },
+        {
+          "id": "smoke-031",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9890130576401159,
+          "probs": [
+            0.010986942359884119,
+            0.9890130576401159
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996868545427307
+          }
+        },
+        {
+          "id": "smoke-032",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5,
+          "probs": [
+            0.5,
+            0.5
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9992682910462045
+          }
+        },
+        {
+          "id": "smoke-033",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.9046505404029324,
+          "probs": [
+            0.9046505404029324,
+            0.09534945959706755
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9997495330680912
+          }
+        },
+        {
+          "id": "smoke-034",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.70578501855422,
+          "probs": [
+            0.29421498144578,
+            0.70578501855422
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996177820102969
+          }
+        },
+        {
+          "id": "smoke-035",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5467381556773533,
+          "probs": [
+            0.5467381556773533,
+            0.45326184432264677
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9997737005326881
+          }
+        },
+        {
+          "id": "smoke-036",
+          "label": "涉诈",
+          "answer": "正常",
+          "confidence": 0.5,
+          "probs": [
+            0.5,
+            0.5
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 1.0,
+            "order_flip_l0": 1.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9995716700840661
+          }
+        },
+        {
+          "id": "smoke-037",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.924141818672973,
+          "probs": [
+            0.07585818132702704,
+            0.924141818672973
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9992243152869638
+          }
+        },
+        {
+          "id": "smoke-038",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.6654105554292292,
+          "probs": [
+            0.33458944457077083,
+            0.6654105554292292
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.9996694783140505
+          }
+        },
+        {
+          "id": "smoke-039",
+          "label": "涉诈",
+          "answer": "涉诈",
+          "confidence": 0.9820137879899237,
+          "probs": [
+            0.017986212010076455,
+            0.9820137879899237
+          ],
+          "level": "L0",
+          "diagnostics": {
+            "permutations": 2,
+            "order_flip_raw": 0.0,
+            "order_flip_l0": 0.0,
+            "prior_method": "none",
+            "prior_strength": 0.0,
+            "answer_mass": 0.999560803765555
+          }
+        }
+      ],
+      "metrics": {
+        "n": 40,
+        "accuracy": 0.55,
+        "macro_tpr": 0.4933333333333333,
+        "ece_10bin": 0.4126096842757737,
+        "brier": 0.7422031506553405,
+        "nll": 1.601183742655511,
+        "mean_confidence": 0.8615567703814966,
+        "answers": {
+          "正常": 11,
+          "涉诈": 29
+        },
+        "per_class": {
+          "正常": {
+            "support": 15,
+            "predicted": 11,
+            "tpr": 0.26666666666666666,
+            "tnr": 0.72
+          },
+          "涉诈": {
+            "support": 25,
+            "predicted": 29,
+            "tpr": 0.72,
+            "tnr": 0.26666666666666666
+          }
+        }
+      }
+    }
+  }
+}
